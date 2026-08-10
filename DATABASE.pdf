@@ -1,0 +1,2376 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<<
+/PageMode /UseNone
+/Pages 2 0 R
+/Type /Catalog
+>>
+endobj
+2 0 obj
+<<
+/Count 3
+/Kids [ 3 0 R 9 0 R 11 0 R ]
+/Type /Pages
+>>
+endobj
+3 0 obj
+<<
+/Contents 4 0 R
+/MediaBox [ 0 0 595.2756 841.8898 ]
+/Parent 2 0 R
+/Resources <<
+/Font 5 0 R
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+>>
+endobj
+4 0 obj
+<<
+/Length 8085
+>>
+stream
+1 0 0 1 0 0 cm
+BT
+/F1 12 Tf
+14.4 TL
+ET
+q
+0.85098 0.886275 0.941176 RG
+0.5 w
+n
+51.02362 36.85039 m
+544.252 36.85039 l
+S
+BT
+/F1 7.5 Tf
+9 TL
+ET
+0.34902 0.396078 0.47451 rg
+BT
+1 0 0 1 51.02362 24.09449 Tm
+(CodeStreak \055 AI Coding Pack) Tj
+T*
+ET
+BT
+1 0 0 1 520.4845 24.09449 Tm
+(Page 1) Tj
+T*
+ET
+Q
+q
+1 0 0 1 51.02362 764.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 5 Tm
+/F2 24 Tf
+29 TL
+(Database and Security) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 744.7008 cm
+q
+0.34902 0.396078 0.47451 rg
+BT
+1 0 0 1 0 3 Tm
+/F1 9 Tf
+12 TL
+(Minimal prototype specification \174 Markdown is the source of truth) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 700.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 18.5 Tm
+/F1 9.5 Tf
+14 TL
+(Use Supabase PostgreSQL\056 Apply all schema changes through a migration that can be rerun in a fresh project\056) Tj
+T*
+(Enable Row Level Security on every application table before the app is shared\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 668.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(Tables) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 643.7008 cm
+q
+0.145098 0.388235 0.921569 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F3 11.5 Tf
+15 TL
+(profiles) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 623.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 623.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(id uuid primary key references auth\056users\050id\051 on delete cascade) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 603.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 603.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(display\137name text not null) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 583.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 583.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(avatar\137url text null) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 563.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 563.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(created\137at timestamptz not null default now\050\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 543.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Create or upsert a profile for each authenticated user\056 A simple auth\055user trigger is acceptable\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 518.7008 cm
+q
+0.145098 0.388235 0.921569 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F3 11.5 Tf
+15 TL
+(groups) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 498.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 498.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(id uuid primary key default gen\137random\137uuid\050\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 478.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 478.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(name text not null) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 458.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 458.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(owner\137id uuid not null references profiles\050id\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 438.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 438.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(invite\137code text not null unique) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 418.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 418.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(created\137at timestamptz not null default now\050\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 393.7008 cm
+q
+0.145098 0.388235 0.921569 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F3 11.5 Tf
+15 TL
+(group\137members) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 373.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 373.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(group\137id uuid not null references groups\050id\051 on delete cascade) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 353.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 353.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(user\137id uuid not null references profiles\050id\051 on delete cascade) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 333.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 333.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(joined\137at timestamptz not null default now\050\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 313.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 313.7008 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F1 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Primary key\072 ) Tj
+/F3 9.5 Tf
+(\050group\137id\054 user\137id\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 293.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(The owner must also have a membership row\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 268.7008 cm
+q
+0.145098 0.388235 0.921569 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F3 11.5 Tf
+15 TL
+(problems) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 248.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 248.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(id uuid primary key default gen\137random\137uuid\050\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 228.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 228.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(group\137id uuid not null references groups\050id\051 on delete cascade) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 208.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 208.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(title text not null) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 188.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 188.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(url text not null) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 168.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 168.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(platform text not null default \047LeetCode\047) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 148.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 148.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(difficulty text not null check \050difficulty in \050\047Easy\047\054 \047Medium\047\054 \047Hard\047\051\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 128.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 128.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(problem\137date date not null) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 108.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 108.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(note text null) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 88.70079 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 88.70079 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(created\137by uuid not null references profiles\050id\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 68.70079 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 68.70079 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(created\137at timestamptz not null default now\050\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 48.70079 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 48.70079 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(updated\137at timestamptz not null default now\050\051) Tj
+T*
+ET
+Q
+Q
+
+endstream
+endobj
+5 0 obj
+<<
+/F1 6 0 R
+/F2 7 0 R
+/F3 8 0 R
+>>
+endobj
+6 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+7 0 obj
+<<
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+8 0 obj
+<<
+/BaseFont /Courier
+/Encoding /WinAnsiEncoding
+/Name /F3
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+9 0 obj
+<<
+/Contents 10 0 R
+/MediaBox [ 0 0 595.2756 841.8898 ]
+/Parent 2 0 R
+/Resources <<
+/Font 5 0 R
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+>>
+endobj
+10 0 obj
+<<
+/Length 8430
+>>
+stream
+1 0 0 1 0 0 cm
+BT
+/F1 12 Tf
+14.4 TL
+ET
+q
+0.85098 0.886275 0.941176 RG
+0.5 w
+n
+51.02362 36.85039 m
+544.252 36.85039 l
+S
+BT
+/F1 7.5 Tf
+9 TL
+ET
+0.34902 0.396078 0.47451 rg
+BT
+1 0 0 1 51.02362 24.09449 Tm
+(CodeStreak \055 AI Coding Pack) Tj
+T*
+ET
+BT
+1 0 0 1 520.4845 24.09449 Tm
+(Page 2) Tj
+T*
+ET
+Q
+q
+1 0 0 1 51.02362 779.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 779.7008 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F1 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Unique constraint\072 ) Tj
+/F3 9.5 Tf
+(\050group\137id\054 problem\137date\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 754.7008 cm
+q
+0.145098 0.388235 0.921569 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F3 11.5 Tf
+15 TL
+(completions) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 734.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 734.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(id uuid primary key default gen\137random\137uuid\050\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 714.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 714.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(problem\137id uuid not null references problems\050id\051 on delete cascade) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 694.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 694.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(user\137id uuid not null references profiles\050id\051 on delete cascade) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 674.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 674.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(completed\137at timestamptz not null default now\050\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 654.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 654.7008 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F1 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Unique constraint\072 ) Tj
+/F3 9.5 Tf
+(\050problem\137id\054 user\137id\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 629.7008 cm
+q
+0.145098 0.388235 0.921569 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F3 11.5 Tf
+15 TL
+(comments) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 609.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 609.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(id uuid primary key default gen\137random\137uuid\050\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 589.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 589.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(problem\137id uuid not null references problems\050id\051 on delete cascade) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 569.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 569.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(user\137id uuid not null references profiles\050id\051 on delete cascade) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 549.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 549.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(message text not null check \050char\137length\050trim\050message\051\051 between 1 and 1000\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 529.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 529.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(created\137at timestamptz not null default now\050\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 497.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(Useful indexes) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 476.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 476.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(group\137members\050user\137id\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 456.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 456.7008 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F3 9.5 Tf
+0.090196 0.12549 0.2 rg
+(problems\050group\137id\054 problem\137date desc\051) Tj
+/F1 9.5 Tf
+(\073 the unique constraint may already provide this index\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 436.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 436.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(completions\050problem\137id\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 416.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 416.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(completions\050user\137id\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 396.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 396.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F3 9.5 Tf
+14 TL
+(comments\050problem\137id\054 created\137at\051) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 376.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Do not add derived heatmap or daily\055summary tables\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 344.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(Required Row Level Security behavior) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 309.7008 cm
+q
+BT
+1 0 0 1 0 18.5 Tm
+14 TL
+/F1 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Policies may use small ) Tj
+/F3 9.5 Tf
+(security definer) Tj
+/F1 9.5 Tf
+( membership helper functions if needed to avoid policy recursion\056 Set a) Tj
+T*
+(safe ) Tj
+/F3 9.5 Tf
+(search\137path) Tj
+/F1 9.5 Tf
+( on such functions\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 284.7008 cm
+q
+0.145098 0.388235 0.921569 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F2 11.5 Tf
+15 TL
+(Profiles) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 264.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 264.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Authenticated users may read profiles only when needed to display members of a group they share\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 244.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 244.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(A user may update only their own profile\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 219.7008 cm
+q
+0.145098 0.388235 0.921569 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F2 11.5 Tf
+15 TL
+(Groups) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 199.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 199.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(A member may read a group they belong to\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 179.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 179.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(An authenticated user may create a group with themselves as owner\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 159.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 159.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Only the owner may update or delete the group\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 134.7008 cm
+q
+0.145098 0.388235 0.921569 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F2 11.5 Tf
+15 TL
+(Group members) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 114.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 114.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Members may read membership rows for their own groups\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 80.70079 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 19 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 80.70079 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 18.5 Tm
+/F1 9.5 Tf
+14 TL
+(A user may insert only a membership for themselves and only when the supplied invite code identifies the group\056) Tj
+T*
+(Prefer a small database function\057RPC for atomic invite\055code joining if direct insert cannot be secured cleanly\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 60.70079 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 60.70079 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(A user may remove only their own membership\056 Prevent or handle the owner leaving in V1\056) Tj
+T*
+ET
+Q
+Q
+
+endstream
+endobj
+11 0 obj
+<<
+/Contents 12 0 R
+/MediaBox [ 0 0 595.2756 841.8898 ]
+/Parent 2 0 R
+/Resources <<
+/Font 5 0 R
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+>>
+endobj
+12 0 obj
+<<
+/Length 6803
+>>
+stream
+1 0 0 1 0 0 cm
+BT
+/F1 12 Tf
+14.4 TL
+ET
+q
+0.85098 0.886275 0.941176 RG
+0.5 w
+n
+51.02362 36.85039 m
+544.252 36.85039 l
+S
+BT
+/F1 7.5 Tf
+9 TL
+ET
+0.34902 0.396078 0.47451 rg
+BT
+1 0 0 1 51.02362 24.09449 Tm
+(CodeStreak \055 AI Coding Pack) Tj
+T*
+ET
+BT
+1 0 0 1 520.4845 24.09449 Tm
+(Page 3) Tj
+T*
+ET
+Q
+q
+1 0 0 1 51.02362 779.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 779.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Only the owner may remove another member\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 754.7008 cm
+q
+0.145098 0.388235 0.921569 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F2 11.5 Tf
+15 TL
+(Problems) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 734.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 734.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Group members may read problems in their group\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 714.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 714.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Only the group owner may insert\054 update\054 or delete problems for that group\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 694.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 694.7008 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F3 9.5 Tf
+0.090196 0.12549 0.2 rg
+(created\137by) Tj
+/F1 9.5 Tf
+( must equal the authenticated user on insert\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 669.7008 cm
+q
+0.145098 0.388235 0.921569 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F2 11.5 Tf
+15 TL
+(Completions) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 649.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 649.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Group members may read completions for problems in their group\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 629.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 629.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(A user may insert or delete only their own completion and only for a problem in a group they belong to\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 609.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 609.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(No user may update a completion to another user\057problem\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 584.7008 cm
+q
+0.145098 0.388235 0.921569 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F2 11.5 Tf
+15 TL
+(Comments) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 564.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 564.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Group members may read comments for problems in their group\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 544.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 544.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(A user may insert only their own comment inside a group they belong to\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 524.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 524.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Deleting or editing comments is not required\056 If deletion is added\054 allow only the author or group owner\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 492.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(Integrity checks) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 471.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 471.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Attempting a duplicate group membership fails harmlessly\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 451.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 451.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Attempting a duplicate completion fails harmlessly\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 431.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 431.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(A non\055member cannot read a group through direct API calls\054 not just through hidden UI\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 411.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 411.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(A member cannot create a problem by calling Supabase directly\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 391.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 391.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(A user cannot create or delete another user\047s completion\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 371.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 371.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Deleting a problem removes its completions and comments\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 351.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 351.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Heatmap and daily counts are query results\054 never independent stored state\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 319.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(Data handling) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 298.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 298.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Store timestamps in UTC and format them in the browser\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 278.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 278.7008 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F1 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Store daily assignment as ) Tj
+/F3 9.5 Tf
+(date) Tj
+/F1 9.5 Tf
+(\054 not a timestamp\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 258.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 258.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Generate invite codes with sufficient randomness\073 do not use sequential IDs\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 238.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 238.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Never expose or use the Supabase service\055role key in frontend code\056) Tj
+T*
+ET
+Q
+Q
+
+endstream
+endobj
+13 0 obj
+<<
+/Author (CodeStreak Project)
+/CreationDate (D\07220260810232141\05305\04700\047)
+/Creator (\050unspecified\051)
+/Keywords ()
+/ModDate (D\07220260810232141\05305\04700\047)
+/Producer (ReportLab PDF Library \055 \050opensource\051)
+/Subject (\050unspecified\051)
+/Title (DATABASE)
+/Trapped (\057False)
+>>
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000015 00000 n 
+0000000083 00000 n 
+0000000155 00000 n 
+0000000354 00000 n 
+0000008491 00000 n 
+0000008542 00000 n 
+0000008649 00000 n 
+0000008761 00000 n 
+0000008866 00000 n 
+0000009066 00000 n 
+0000017549 00000 n 
+0000017750 00000 n 
+0000024606 00000 n 
+trailer
+<<
+/Size 14
+/Root 1 0 R
+/Info 13 0 R
+/ID [ <e6f516d481647803ea4d26b7b10d55c3> <e6f516d481647803ea4d26b7b10d55c3> ]
+>>
+startxref
+24928
+%%EOF

@@ -1,0 +1,1556 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<<
+/PageMode /UseNone
+/Pages 2 0 R
+/Type /Catalog
+>>
+endobj
+2 0 obj
+<<
+/Count 2
+/Kids [ 3 0 R 9 0 R ]
+/Type /Pages
+>>
+endobj
+3 0 obj
+<<
+/Contents 4 0 R
+/MediaBox [ 0 0 595.2756 841.8898 ]
+/Parent 2 0 R
+/Resources <<
+/Font 5 0 R
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+>>
+endobj
+4 0 obj
+<<
+/Length 8562
+>>
+stream
+1 0 0 1 0 0 cm
+BT
+/F1 12 Tf
+14.4 TL
+ET
+q
+0.85098 0.886275 0.941176 RG
+0.5 w
+n
+51.02362 36.85039 m
+544.252 36.85039 l
+S
+BT
+/F1 7.5 Tf
+9 TL
+ET
+0.34902 0.396078 0.47451 rg
+BT
+1 0 0 1 51.02362 24.09449 Tm
+(CodeStreak \055 AI Coding Pack) Tj
+T*
+ET
+BT
+1 0 0 1 520.4845 24.09449 Tm
+(Page 1) Tj
+T*
+ET
+Q
+q
+1 0 0 1 51.02362 764.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 5 Tm
+/F2 24 Tf
+29 TL
+(User Flows) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 744.7008 cm
+q
+0.34902 0.396078 0.47451 rg
+BT
+1 0 0 1 0 3 Tm
+/F1 9 Tf
+12 TL
+(Minimal prototype specification \174 Markdown is the source of truth) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 709.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(1\056 New member joins) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 690.7008 cm
+q
+0.85098 0.886275 0.941176 RG
+0.5 w
+0.964706 0.972549 0.984314 rg
+n
+-7 -7 507.2283 26 re
+B*
+Q
+q
+BT
+1 0 0 1 0 3.7 Tm
+12 TL
+/F3 8.3 Tf
+0.090196 0.12549 0.2 rg
+(Open shared link \055) Tj
+(\076 Sign in \055) Tj
+(\076 Enter\057accept invite code \055) Tj
+(\076 Join group \055) Tj
+(\076 Dashboard) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 668.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(1) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 668.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(User opens the deployed link or invite link\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 648.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(2) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 648.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(If signed out\054 the app requests authentication\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 628.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(3) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 628.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(The app shows the invite code from the link or asks the user to enter one\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 608.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(4) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 608.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(User confirms joining\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 588.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(5) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 588.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(The app creates one membership if it does not already exist\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 568.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(6) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 568.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(User lands on the group dashboard\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 548.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Failure states\072) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 527.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 527.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Invalid or expired\055looking code\072 show \042Group not found\042 and allow retry\056 Codes need not actually expire in V1\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 507.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 507.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Existing member\072 do not duplicate membership\073 open the dashboard\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 487.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 487.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Database error\072 show a retryable message and do not pretend the join succeeded\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 455.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(2\056 Admin creates a group) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 436.7008 cm
+q
+0.85098 0.886275 0.941176 RG
+0.5 w
+0.964706 0.972549 0.984314 rg
+n
+-7 -7 507.2283 26 re
+B*
+Q
+q
+BT
+1 0 0 1 0 3.7 Tm
+12 TL
+/F3 8.3 Tf
+0.090196 0.12549 0.2 rg
+(Sign in \055) Tj
+(\076 Create group \055) Tj
+(\076 Enter name \055) Tj
+(\076 Create \055) Tj
+(\076 Copy invite link \055) Tj
+(\076 Dashboard) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 414.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(1) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 414.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(User enters a group name\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 394.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(2) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 394.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(App creates the group with the user as owner\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 374.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(3) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 374.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(App also creates the owner\047s membership\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 354.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(4) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 354.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(App displays a copyable invite code\057link\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 322.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(3\056 Admin publishes today\047s problem) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 303.7008 cm
+q
+0.85098 0.886275 0.941176 RG
+0.5 w
+0.964706 0.972549 0.984314 rg
+n
+-7 -7 507.2283 26 re
+B*
+Q
+q
+BT
+1 0 0 1 0 3.7 Tm
+12 TL
+/F3 8.3 Tf
+0.090196 0.12549 0.2 rg
+(Dashboard \055) Tj
+(\076 Add problem \055) Tj
+(\076 Enter fields \055) Tj
+(\076 Publish \055) Tj
+(\076 Dashboard) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 281.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Required fields\072 title\054 valid external URL\054 difficulty\054 and date\056 Platform defaults to LeetCode\056 Note is optional\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 246.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 18.5 Tm
+/F1 9.5 Tf
+14 TL
+(If a problem already exists for that group and date\054 the app asks the admin to edit it rather than creating a second) Tj
+T*
+(daily problem\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 214.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(4\056 Member completes today\047s problem) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 195.7008 cm
+q
+0.85098 0.886275 0.941176 RG
+0.5 w
+0.964706 0.972549 0.984314 rg
+n
+-7 -7 507.2283 26 re
+B*
+Q
+q
+BT
+1 0 0 1 0 3.7 Tm
+12 TL
+/F3 8.3 Tf
+0.090196 0.12549 0.2 rg
+(Dashboard \055) Tj
+(\076 Open problem externally \055) Tj
+(\076 Return \055) Tj
+(\076 Mark done \055) Tj
+(\076 See updated progress) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 173.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(1) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 173.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Member opens the external problem link in a new tab\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 153.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(2) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 153.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Member returns after solving it\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 133.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(3) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 133.7008 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F1 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Member selects ) Tj
+/F2 9.5 Tf
+(Mark done) Tj
+/F1 9.5 Tf
+(\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 113.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(4) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 113.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(App creates the member\047s completion record once\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 93.70079 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(5) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 93.70079 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F1 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Button becomes ) Tj
+/F2 9.5 Tf
+(Completed) Tj
+/F1 9.5 Tf
+( and count\057member status update\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 73.70079 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(6) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 73.70079 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Refresh preserves the completed state\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 53.70079 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(7) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 53.70079 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F1 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Selecting ) Tj
+/F2 9.5 Tf
+(Undo) Tj
+/F1 9.5 Tf
+( removes only that member\047s completion after confirmation or a clear second action\056) Tj
+T*
+ET
+Q
+Q
+
+endstream
+endobj
+5 0 obj
+<<
+/F1 6 0 R
+/F2 7 0 R
+/F3 8 0 R
+>>
+endobj
+6 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+7 0 obj
+<<
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+8 0 obj
+<<
+/BaseFont /Courier
+/Encoding /WinAnsiEncoding
+/Name /F3
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+9 0 obj
+<<
+/Contents 10 0 R
+/MediaBox [ 0 0 595.2756 841.8898 ]
+/Parent 2 0 R
+/Resources <<
+/Font 5 0 R
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+>>
+endobj
+10 0 obj
+<<
+/Length 6941
+>>
+stream
+1 0 0 1 0 0 cm
+BT
+/F1 12 Tf
+14.4 TL
+ET
+q
+0.85098 0.886275 0.941176 RG
+0.5 w
+n
+51.02362 36.85039 m
+544.252 36.85039 l
+S
+BT
+/F1 7.5 Tf
+9 TL
+ET
+0.34902 0.396078 0.47451 rg
+BT
+1 0 0 1 51.02362 24.09449 Tm
+(CodeStreak \055 AI Coding Pack) Tj
+T*
+ET
+BT
+1 0 0 1 520.4845 24.09449 Tm
+(Page 2) Tj
+T*
+ET
+Q
+q
+1 0 0 1 51.02362 774.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(5\056 Member views daily progress) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 753.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(The dashboard shows\072) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 732.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 732.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Today\047s problem or a clear \042No problem posted\042 state\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 712.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 712.7008 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F3 9.5 Tf
+0.090196 0.12549 0.2 rg
+(completed members \057 total active members) Tj
+/F1 9.5 Tf
+(\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 692.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 692.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(A simple completed\057not completed status for every group member\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 672.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Members cannot edit other members\047 statuses\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 640.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(6\056 Member views seven\055day progress) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 621.7008 cm
+q
+0.85098 0.886275 0.941176 RG
+0.5 w
+0.964706 0.972549 0.984314 rg
+n
+-7 -7 507.2283 26 re
+B*
+Q
+q
+BT
+1 0 0 1 0 3.7 Tm
+12 TL
+/F3 8.3 Tf
+0.090196 0.12549 0.2 rg
+(Dashboard \055) Tj
+(\076 Progress \055) Tj
+(\076 Seven\055day heatmap) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 599.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 599.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Rows represent current group members\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 579.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 579.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Columns represent the last seven calendar dates\054 including today\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 559.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 559.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(A completed problem is shown as completed\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 539.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 539.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(A posted but incomplete problem is shown as incomplete\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 519.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 519.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(A date without a posted problem is shown as no problem\054 not as a failure\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 499.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 499.7008 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F1 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Values are calculated from ) Tj
+/F3 9.5 Tf
+(problems) Tj
+/F1 9.5 Tf
+( and ) Tj
+/F3 9.5 Tf
+(completions) Tj
+/F1 9.5 Tf
+(\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 467.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(7\056 Member discusses a problem) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 448.7008 cm
+q
+0.85098 0.886275 0.941176 RG
+0.5 w
+0.964706 0.972549 0.984314 rg
+n
+-7 -7 507.2283 26 re
+B*
+Q
+q
+BT
+1 0 0 1 0 3.7 Tm
+12 TL
+/F3 8.3 Tf
+0.090196 0.12549 0.2 rg
+(Open problem details \055) Tj
+(\076 Read comments \055) Tj
+(\076 Add short text \055) Tj
+(\076 Post) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 426.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 426.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Comments are plain text\054 chronological\054 and linked to one problem\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 406.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 406.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Empty or whitespace\055only comments are rejected\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 386.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 386.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(The app shows author name and timestamp\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 366.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 366.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(No replies\054 reactions\054 attachments\054 editing\054 or mentions\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 346.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 346.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(This flow is implemented only after flows 1\0556 work\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 314.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(8\056 Admin edits or deletes a problem) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 293.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Only the group owner sees admin actions\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 272.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 272.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Edit\072 open the existing values\054 validate changes\054 save\054 and return to the dashboard\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 238.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 19 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 238.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 18.5 Tm
+/F1 9.5 Tf
+14 TL
+(Delete\072 warn that related completions and comments will also be deleted\054 require confirmation\054 then show the) Tj
+T*
+(empty state\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 206.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(9\056 Sign out) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 187.7008 cm
+q
+0.85098 0.886275 0.941176 RG
+0.5 w
+0.964706 0.972549 0.984314 rg
+n
+-7 -7 507.2283 26 re
+B*
+Q
+q
+BT
+1 0 0 1 0 3.7 Tm
+12 TL
+/F3 8.3 Tf
+0.090196 0.12549 0.2 rg
+(Account menu \055) Tj
+(\076 Sign out \055) Tj
+(\076 Login) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 165.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(The session ends and protected group pages no longer reveal group data\056) Tj
+T*
+ET
+Q
+Q
+
+endstream
+endobj
+11 0 obj
+<<
+/Author (CodeStreak Project)
+/CreationDate (D\07220260810232141\05305\04700\047)
+/Creator (\050unspecified\051)
+/Keywords ()
+/ModDate (D\07220260810232141\05305\04700\047)
+/Producer (ReportLab PDF Library \055 \050opensource\051)
+/Subject (\050unspecified\051)
+/Title (USER\137FLOWS)
+/Trapped (\057False)
+>>
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000015 00000 n 
+0000000083 00000 n 
+0000000148 00000 n 
+0000000347 00000 n 
+0000008961 00000 n 
+0000009012 00000 n 
+0000009119 00000 n 
+0000009231 00000 n 
+0000009336 00000 n 
+0000009536 00000 n 
+0000016530 00000 n 
+trailer
+<<
+/Size 12
+/Root 1 0 R
+/Info 11 0 R
+/ID [ <bbbbdea3d83c37de036d24ba1b9f0179> <bbbbdea3d83c37de036d24ba1b9f0179> ]
+>>
+startxref
+16857
+%%EOF

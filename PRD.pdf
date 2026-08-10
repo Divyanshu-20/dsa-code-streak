@@ -1,0 +1,1433 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<<
+/PageMode /UseNone
+/Pages 2 0 R
+/Type /Catalog
+>>
+endobj
+2 0 obj
+<<
+/Count 2
+/Kids [ 3 0 R 9 0 R ]
+/Type /Pages
+>>
+endobj
+3 0 obj
+<<
+/Contents 4 0 R
+/MediaBox [ 0 0 595.2756 841.8898 ]
+/Parent 2 0 R
+/Resources <<
+/Font 5 0 R
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+>>
+endobj
+4 0 obj
+<<
+/Length 7050
+>>
+stream
+1 0 0 1 0 0 cm
+BT
+/F1 12 Tf
+14.4 TL
+ET
+q
+0.85098 0.886275 0.941176 RG
+0.5 w
+n
+51.02362 36.85039 m
+544.252 36.85039 l
+S
+BT
+/F1 7.5 Tf
+9 TL
+ET
+0.34902 0.396078 0.47451 rg
+BT
+1 0 0 1 51.02362 24.09449 Tm
+(CodeStreak \055 AI Coding Pack) Tj
+T*
+ET
+BT
+1 0 0 1 520.4845 24.09449 Tm
+(Page 1) Tj
+T*
+ET
+Q
+q
+1 0 0 1 51.02362 764.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 5 Tm
+/F2 24 Tf
+29 TL
+(PRD \055 CodeStreak) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 744.7008 cm
+q
+0.34902 0.396078 0.47451 rg
+BT
+1 0 0 1 0 3 Tm
+/F1 9 Tf
+12 TL
+(Minimal prototype specification \174 Markdown is the source of truth) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 709.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(Product summary) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 660.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 32.5 Tm
+/F1 9.5 Tf
+14 TL
+-0.088421 Tw
+(A lightweight accountability web app for one small private DSA study group\056 Members solve problems on LeetCode or) Tj
+T*
+0 Tw
+(another external platform\054 then use this app to record completion\054 see group consistency\054 and discuss a problem) Tj
+T*
+(briefly\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 639.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Core loop\072) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 620.7008 cm
+q
+0.85098 0.886275 0.941176 RG
+0.5 w
+0.964706 0.972549 0.984314 rg
+n
+-7 -7 507.2283 26 re
+B*
+Q
+q
+BT
+1 0 0 1 0 3.7 Tm
+12 TL
+/F3 8.3 Tf
+0.090196 0.12549 0.2 rg
+(See problem \055) Tj
+(\076 Solve externally \055) Tj
+(\076 Mark done \055) Tj
+(\076 See group progress \055) Tj
+(\076 Stay consistent) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 598.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(The app is not a coding platform and must not attempt to replace LeetCode\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 566.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(Problem) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 517.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 32.5 Tm
+/F1 9.5 Tf
+14 TL
+(Progress in WhatsApp\054 Reddit\054 or Discord study groups gets buried in chat\056 Members cannot quickly see who) Tj
+T*
+(completed the daily problem\054 whether the group is staying consistent\054 or who has silently dropped off\056 Admins must) Tj
+T*
+(post and track progress manually\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 485.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(Target users) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 464.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 464.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Initial test group\072 10\05515 existing members\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 444.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 444.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Prototype capacity\072 10\05550 users\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 424.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 424.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Roles\072 one group owner\057admin and regular members\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 392.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(Prototype goal) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 357.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 18.5 Tm
+/F1 9.5 Tf
+14 TL
+(Test one assumption\072 will a small DSA group voluntarily use a dedicated accountability page for 2\0554 weeks instead of) Tj
+T*
+(posting only \042Done\042 in chat\077) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 325.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(Required features) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 304.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(1) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 304.7008 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F2 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Authentication) Tj
+/F1 9.5 Tf
+( \055 Google sign\055in preferred\073 email\057password is an acceptable fallback\056 Sessions persist\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 270.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 19.5 Tm
+(2) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 270.7008 cm
+q
+BT
+1 0 0 1 0 18.5 Tm
+14 TL
+/F2 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Private group) Tj
+/F1 9.5 Tf
+( \055 An admin creates a group\056 Members join using an invite code or link\056 Only members can access) Tj
+T*
+(group data\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 236.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 19.5 Tm
+(3) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 236.7008 cm
+q
+BT
+1 0 0 1 0 18.5 Tm
+14 TL
+/F2 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Today\047s problem) Tj
+/F1 9.5 Tf
+( \055 The admin publishes one problem for a date with title\054 URL\054 platform\054 difficulty\054 and optional) Tj
+T*
+(note\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 216.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(4) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 216.7008 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F2 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Completion) Tj
+/F1 9.5 Tf
+( \055 A member marks or unmarks their own completion\056 State persists after refresh\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 196.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(5) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 196.7008 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F2 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Daily progress) Tj
+/F1 9.5 Tf
+( \055 Show completed count\054 total member count\054 and each member\047s status\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 162.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 19.5 Tm
+(6) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 162.7008 cm
+q
+BT
+1 0 0 1 0 18.5 Tm
+14 TL
+/F2 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Weekly heatmap) Tj
+/F1 9.5 Tf
+( \055 Show members as rows and the last seven dates as columns\056 Values are derived from) Tj
+T*
+(problems and completions\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 142.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(7) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 142.7008 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F2 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Minimal discussion) Tj
+/F1 9.5 Tf
+( \055 Short chronological text comments per problem\056 Build this only after the core loop works\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 122.7008 cm
+BT
+/F2 8.5 Tf
+10.2 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -3 5.5 Tm
+(8) Tj
+T*
+ET
+Q
+q
+1 0 0 1 66.02362 122.7008 cm
+q
+BT
+1 0 0 1 0 4.5 Tm
+14 TL
+/F2 9.5 Tf
+0.090196 0.12549 0.2 rg
+(Admin controls) Tj
+/F1 9.5 Tf
+( \055 Create\054 edit\054 or delete a problem and copy the invite code\057link\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 90.70079 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(Main screens) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 69.70079 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 69.70079 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Sign in) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 49.70079 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 49.70079 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Create or join group) Tj
+T*
+ET
+Q
+Q
+
+endstream
+endobj
+5 0 obj
+<<
+/F1 6 0 R
+/F2 7 0 R
+/F3 8 0 R
+>>
+endobj
+6 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+7 0 obj
+<<
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+8 0 obj
+<<
+/BaseFont /Courier
+/Encoding /WinAnsiEncoding
+/Name /F3
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+9 0 obj
+<<
+/Contents 10 0 R
+/MediaBox [ 0 0 595.2756 841.8898 ]
+/Parent 2 0 R
+/Resources <<
+/Font 5 0 R
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+>>
+endobj
+10 0 obj
+<<
+/Length 7551
+>>
+stream
+1 0 0 1 0 0 cm
+BT
+/F1 12 Tf
+14.4 TL
+ET
+q
+0.85098 0.886275 0.941176 RG
+0.5 w
+n
+51.02362 36.85039 m
+544.252 36.85039 l
+S
+BT
+/F1 7.5 Tf
+9 TL
+ET
+0.34902 0.396078 0.47451 rg
+BT
+1 0 0 1 51.02362 24.09449 Tm
+(CodeStreak \055 AI Coding Pack) Tj
+T*
+ET
+BT
+1 0 0 1 520.4845 24.09449 Tm
+(Page 2) Tj
+T*
+ET
+Q
+q
+1 0 0 1 51.02362 779.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 779.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Group dashboard with today\047s problem and progress) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 759.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 759.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Seven\055day progress view) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 739.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 739.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Problem discussion) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 719.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 719.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Minimal admin problem form) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 687.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(Experience direction) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 666.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 666.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Mobile\055first because most users will open the link from chat\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 646.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 646.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Clean and modern\054 but not a dense corporate admin panel\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 626.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 626.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Today\047s problem and completion state dominate the dashboard\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 606.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 606.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Completion progress is visible without navigating elsewhere\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 586.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 586.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(The heatmap may take visual inspiration from GitHub contribution activity\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 566.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 566.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Use cards and animation sparingly\056 Prioritize clear states and fast interaction\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 534.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(Out of scope) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 513.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 513.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Code editor\054 compiler\054 code execution\054 submissions\054 or solutions) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 493.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 493.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(LeetCode account integration or automatic completion detection) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 473.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 473.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(AI hints\054 AI chat\054 or AI APIs) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 453.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 453.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Rankings\054 points\054 badges\054 rewards\054 or competitive leaderboards) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 433.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 433.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Notifications\054 reminders\054 WhatsApp\057Discord integrations\054 or email campaigns) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 413.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 413.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Public groups\054 group discovery\054 friends\054 direct messages\054 or multiple admin roles) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 393.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 393.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Rich profiles\054 file\057image uploads\054 reactions\054 mentions\054 or threaded comments) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 373.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 373.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Native mobile apps\054 subscriptions\054 payments\054 analytics platforms\054 or complex moderation) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 353.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Do not implement out\055of\055scope items even if they appear easy\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 321.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(Success signals) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 300.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 300.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(More than 60\045 of invited users register\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 280.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 280.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Roughly 40\05550\045 or more of members regularly mark completion\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 260.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 260.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Members still use the app after two weeks\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 240.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 240.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Members open it without repeated reminders\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 220.7008 cm
+BT
+/F1 9 Tf
+10.8 TL
+ET
+0 0 0 rg
+BT
+1 0 0 1 -2 5 Tm
+<7f> Tj
+T*
+ET
+Q
+q
+1 0 0 1 64.02362 220.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4.5 Tm
+/F1 9.5 Tf
+14 TL
+(Users can understand the core loop with little explanation\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 188.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 4 Tm
+/F2 15 Tf
+19 TL
+(Product decision rule) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 51.02362 153.7008 cm
+q
+0.090196 0.12549 0.2 rg
+BT
+1 0 0 1 0 18.5 Tm
+/F1 9.5 Tf
+14 TL
+(After 2\0554 weeks\054 continue only if visible group accountability improves consistency or users clearly value the shared) Tj
+T*
+(progress view\056 Improve\054 reposition\054 or stop based on observed behavior rather than adding features automatically\056) Tj
+T*
+ET
+Q
+Q
+
+endstream
+endobj
+11 0 obj
+<<
+/Author (CodeStreak Project)
+/CreationDate (D\07220260810232141\05305\04700\047)
+/Creator (\050unspecified\051)
+/Keywords ()
+/ModDate (D\07220260810232141\05305\04700\047)
+/Producer (ReportLab PDF Library \055 \050opensource\051)
+/Subject (\050unspecified\051)
+/Title (PRD)
+/Trapped (\057False)
+>>
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000015 00000 n 
+0000000083 00000 n 
+0000000148 00000 n 
+0000000347 00000 n 
+0000007449 00000 n 
+0000007500 00000 n 
+0000007607 00000 n 
+0000007719 00000 n 
+0000007824 00000 n 
+0000008024 00000 n 
+0000015628 00000 n 
+trailer
+<<
+/Size 12
+/Root 1 0 R
+/Info 11 0 R
+/ID [ (\304\244AMqIo\241\270\262\365\346\244\340\056q) (\304\244AMqIo\241\270\262\365\346\244\340\056q) ]
+>>
+startxref
+15945
+%%EOF
