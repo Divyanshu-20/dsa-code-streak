@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Flame, Users } from 'lucide-react'
+import { ArrowRight, Check, Code2, Users } from 'lucide-react'
 import { useState } from 'react'
 import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { Feedback } from '../components/Feedback'
@@ -107,7 +107,7 @@ export function LoginPage() {
     <div className="auth-page">
       <section className="auth-story">
         <div className="brand brand--large">
-          <span className="brand-mark"><Flame size={21} fill="currentColor" /></span>
+          <span className="brand-mark"><Code2 size={22} strokeWidth={2.6} /></span>
           <span>CodeStreak</span>
         </div>
         <div>

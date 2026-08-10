@@ -1,4 +1,4 @@
-import { ArrowLeft, Flame, LogOut } from 'lucide-react'
+import { ArrowLeft, Code2, LogOut } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
 import { requireSupabase } from '../lib/supabase'
 
@@ -26,7 +26,7 @@ export function AppShell({ children, backTo, backLabel = 'Back' }: AppShellProps
             </Link>
           ) : (
             <Link className="brand" to="/onboarding" aria-label="CodeStreak home">
-              <span className="brand-mark"><Flame size={19} fill="currentColor" /></span>
+              <span className="brand-mark"><Code2 size={20} strokeWidth={2.6} /></span>
               <span>CodeStreak</span>
             </Link>
           )}
