@@ -4,7 +4,7 @@ CodeStreak is a mobile-first accountability app for small private DSA groups. An
 
 ## Included prototype
 
-- Email/password authentication with persistent Supabase sessions
+- One-tap Google sign-in plus email/password fallback with persistent Supabase sessions
 - Private group creation and invite-code joining
 - Owner-only daily problem creation, editing, and deletion
 - Member completion and undo with persisted shared status
@@ -18,14 +18,16 @@ CodeStreak is a mobile-first accountability app for small private DSA groups. An
 1. Create a Supabase project.
 2. Apply [`supabase/migrations/20260810202905_initial_codestreak.sql`](supabase/migrations/20260810202905_initial_codestreak.sql).
 3. Enable Email authentication in Supabase Auth.
-4. Copy `.env.example` to `.env.local` and set:
+4. Enable the Google provider under **Authentication -> Sign In / Providers**, add the Google client ID and secret, and follow Supabase's displayed callback-URL instructions.
+5. Under **Authentication -> URL Configuration**, add both the local login URL and deployed login URL to the redirect allow list (for example, `http://localhost:5173/login` and `https://your-app.vercel.app/login`).
+6. Copy `.env.example` to `.env.local` and set:
 
    ```env
    VITE_SUPABASE_URL=https://your-project.supabase.co
    VITE_SUPABASE_PUBLISHABLE_KEY=sb_publishable_your_key
    ```
 
-5. Install and run:
+7. Install and run:
 
    ```bash
    npm install

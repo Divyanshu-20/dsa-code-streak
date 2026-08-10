@@ -2,20 +2,22 @@
 
 ## 1. New member joins
 
-`Open shared link -> Sign in -> Enter/accept invite code -> Join group -> Dashboard`
+`Open shared link -> Continue with Google -> Enter/accept invite code -> Join group -> Dashboard`
 
 1. User opens the deployed link or invite link.
-2. If signed out, the app requests authentication.
-3. The app shows the invite code from the link or asks the user to enter one.
-4. User confirms joining.
-5. The app creates one membership if it does not already exist.
-6. User lands on the group dashboard.
+2. If signed out, the app offers Google as the primary one-tap option and email/password as a fallback.
+3. After Google redirects back, the app restores the original invite destination.
+4. The app shows the invite code from the link or asks the user to enter one.
+5. User confirms joining.
+6. The app creates one membership if it does not already exist.
+7. User lands on the group dashboard.
 
 Failure states:
 
 - Invalid or expired-looking code: show "Group not found" and allow retry. Codes need not actually expire in V1.
 - Existing member: do not duplicate membership; open the dashboard.
 - Database error: show a retryable message and do not pretend the join succeeded.
+- Email-provider rate limit: explain that Google sign-in is available immediately instead of exposing a raw backend error.
 
 ## 2. Admin creates a group
 

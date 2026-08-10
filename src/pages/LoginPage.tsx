@@ -5,6 +5,31 @@ import { Feedback } from '../components/Feedback'
 import { useAuth } from '../context/AuthContext'
 import { errorMessage, requireSupabase } from '../lib/supabase'
 
+const POST_AUTH_DESTINATION_KEY = 'codestreak-post-auth-destination'
+
+function safeDestination(value: unknown) {
+  return typeof value === 'string' && value.startsWith('/') && !value.startsWith('//')
+    ? value
+    : '/onboarding'
+}
+
+function friendlyAuthError(error: unknown) {
+  const detail = errorMessage(error)
+  const normalized = detail.toLowerCase()
+
+  if (normalized.includes('email rate limit exceeded') || normalized.includes('over_email_send_rate_limit')) {
+    return 'Too many confirmation emails were requested. Continue with Google now, or try email again later.'
+  }
+  if (normalized.includes('invalid login credentials')) {
+    return 'That email and password do not match. Try again, or continue with Google.'
+  }
+  if (normalized.includes('provider is not enabled') || normalized.includes('unsupported provider')) {
+    return 'Google sign-in is not enabled yet. Please use email and password for now.'
+  }
+
+  return detail
+}
+
 export function LoginPage() {
   const { user, loading } = useAuth()
   const navigate = useNavigate()
@@ -13,15 +38,41 @@ export function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
-  const [busy, setBusy] = useState(false)
+  const [busy, setBusy] = useState<'google' | 'email' | ''>('')
   const [message, setMessage] = useState('')
   const [success, setSuccess] = useState('')
+  const [destination] = useState(() => {
+    const requested = (location.state as { from?: string } | null)?.from
+    return safeDestination(requested ?? window.sessionStorage.getItem(POST_AUTH_DESTINATION_KEY))
+  })
 
-  if (!loading && user) return <Navigate to="/onboarding" replace />
+  if (!loading && user) {
+    window.sessionStorage.removeItem(POST_AUTH_DESTINATION_KEY)
+    return <Navigate to={destination} replace />
+  }
+
+  async function continueWithGoogle() {
+    setBusy('google')
+    setMessage('')
+    setSuccess('')
+    window.sessionStorage.setItem(POST_AUTH_DESTINATION_KEY, destination)
+
+    try {
+      const { error } = await requireSupabase().auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo: `${window.location.origin}/login` },
+      })
+      if (error) throw error
+    } catch (error) {
+      window.sessionStorage.removeItem(POST_AUTH_DESTINATION_KEY)
+      setMessage(friendlyAuthError(error))
+      setBusy('')
+    }
+  }
 
   async function submit(event: React.FormEvent) {
     event.preventDefault()
-    setBusy(true)
+    setBusy('email')
     setMessage('')
     setSuccess('')
 
@@ -44,12 +95,11 @@ export function LoginPage() {
         if (error) throw error
       }
 
-      const requested = (location.state as { from?: string } | null)?.from
-      navigate(requested || '/onboarding', { replace: true })
+      navigate(destination, { replace: true })
     } catch (error) {
-      setMessage(errorMessage(error))
+      setMessage(friendlyAuthError(error))
     } finally {
-      setBusy(false)
+      setBusy('')
     }
   }
 
@@ -77,7 +127,14 @@ export function LoginPage() {
         <div className="auth-card">
           <p className="eyebrow">{mode === 'signin' ? 'Welcome back' : 'Start your streak'}</p>
           <h2>{mode === 'signin' ? 'Sign in to your group' : 'Create your account'}</h2>
-          <p className="muted">Use the same email each day so your completion history stays together.</p>
+          <p className="muted">One tap with Google is the easiest way to keep your progress together.</p>
+
+          <button className="button button--google button--wide" type="button" disabled={Boolean(busy)} onClick={continueWithGoogle}>
+            <span className="google-mark" aria-hidden="true">G</span>
+            {busy === 'google' ? 'Opening Google…' : 'Continue with Google'}
+          </button>
+
+          <div className="auth-divider"><span>or use email</span></div>
 
           <form className="form-stack" onSubmit={submit}>
             {mode === 'signup' && (
@@ -96,8 +153,8 @@ export function LoginPage() {
             </label>
             <Feedback message={message} />
             <Feedback message={success} tone="success" />
-            <button className="button button--primary button--wide" disabled={busy}>
-              {busy ? 'Please wait…' : mode === 'signin' ? 'Sign in' : 'Create account'}
+            <button className="button button--primary button--wide" disabled={Boolean(busy)}>
+              {busy === 'email' ? 'Please wait…' : mode === 'signin' ? 'Sign in' : 'Create account'}
               {!busy && <ArrowRight size={18} />}
             </button>
           </form>

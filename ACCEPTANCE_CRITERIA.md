@@ -4,7 +4,10 @@ The prototype is ready to share only when all required items below pass on the d
 
 ## Authentication and access
 
-- [ ] A new user can sign in using the configured authentication method.
+- [ ] A new user can sign in with Google from the primary login action.
+- [ ] Email/password remains available as a fallback for existing accounts.
+- [ ] An invite URL survives the Google redirect and returns the user to the intended join flow.
+- [ ] An email-provider rate limit shows a helpful Google fallback instead of a raw backend error.
 - [ ] Refreshing the page preserves a valid session.
 - [ ] Signing out prevents protected pages from showing group data.
 - [ ] A non-member cannot read a group's data through the UI or direct Supabase requests.
