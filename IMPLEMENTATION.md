@@ -45,7 +45,7 @@ Protected pages redirect unauthenticated users to sign in. Non-members must rece
 5. Member marks/unmarks completion.
 6. Render daily count and member statuses from database records.
 7. Render the seven-day heatmap from problems and completions.
-8. Add minimal comments.
+8. Add discussion posts with private image storage, formatted code sections, and owner moderation.
 9. Add loading, empty, validation, and error states.
 10. Verify mobile layout, access isolation, refresh persistence, and Vercel production build.
 

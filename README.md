@@ -9,14 +9,15 @@ CodeStreak is a mobile-first accountability app for small private DSA groups. An
 - Owner-only daily problem creation, editing, and deletion
 - Member completion and undo with persisted shared status
 - Daily member progress and a derived seven-day heatmap
-- Short chronological problem discussion
+- Rich problem discussion with text, private image attachments, and readable code sections
+- Owner moderation for deleting discussion posts
 - PostgreSQL constraints, atomic group RPCs, and Row Level Security policies
 - Responsive Vite/React interface and Vercel SPA routing
 
 ## Local setup
 
 1. Create a Supabase project.
-2. Apply [`supabase/migrations/20260810202905_initial_codestreak.sql`](supabase/migrations/20260810202905_initial_codestreak.sql).
+2. Apply every SQL file in [`supabase/migrations`](supabase/migrations) in timestamp order.
 3. Enable Email authentication in Supabase Auth.
 4. Enable the Google provider under **Authentication -> Sign In / Providers**, add the Google client ID and secret, and follow Supabase's displayed callback-URL instructions.
 5. Under **Authentication -> URL Configuration**, add both the local login URL and deployed login URL to the redirect allow list (for example, `http://localhost:5173/login` and `https://your-app.vercel.app/login`).

@@ -32,7 +32,7 @@ Test one assumption: will a small DSA group voluntarily use a dedicated accounta
 4. **Completion** - A member marks or unmarks their own completion. State persists after refresh.
 5. **Daily progress** - Show completed count, total member count, and each member's status.
 6. **Weekly heatmap** - Show members as rows and the last seven dates as columns. Values are derived from problems and completions.
-7. **Minimal discussion** - Short chronological text comments per problem. Build this only after the core loop works.
+7. **Open discussion** - Chronological posts per problem with short text, one private image attachment, and an optional formatted code section.
 8. **Admin controls** - Create, edit, or delete a problem and copy the invite code/link.
 
 ## Main screens
@@ -61,7 +61,7 @@ Test one assumption: will a small DSA group voluntarily use a dedicated accounta
 - Rankings, points, badges, rewards, or competitive leaderboards
 - Notifications, reminders, WhatsApp/Discord integrations, or email campaigns
 - Public groups, group discovery, friends, direct messages, or multiple admin roles
-- Rich profiles, file/image uploads, reactions, mentions, or threaded comments
+- Rich profiles, general file uploads, reactions, mentions, or threaded comments
 - Native mobile apps, subscriptions, payments, analytics platforms, or complex moderation
 
 Do not implement out-of-scope items even if they appear easy.

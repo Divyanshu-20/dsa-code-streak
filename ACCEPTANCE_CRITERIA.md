@@ -58,14 +58,17 @@ Given a signed-in group member and a posted problem:
 - [ ] The heatmap is readable without horizontal breakage at approximately 390 px width.
 - [ ] Empty or partially populated weeks render without errors.
 
-## Minimal discussion
+## Open discussion
 
-- [ ] A group member can read chronological comments for a group problem.
-- [ ] A member can post plain text between 1 and 1000 trimmed characters.
+- [ ] A group member can read chronological posts for a group problem.
+- [ ] A member can post text between 1 and 1000 trimmed characters, a code section up to 8000 characters, an image, or a supported combination.
+- [ ] Image attachments accept only JPG, PNG, WebP, or GIF files up to 5 MB and remain in a private bucket.
+- [ ] Code sections preserve whitespace, show their selected language, and can be copied.
 - [ ] Empty submissions are rejected and duplicate pending submissions are prevented.
 - [ ] Author name and timestamp are shown.
-- [ ] A non-member cannot read or post comments through direct API calls.
-- [ ] No replies, reactions, attachments, editing, or mentions are added.
+- [ ] The group owner can delete any discussion post after confirmation; regular members cannot delete another member's post.
+- [ ] A non-member cannot read posts or discussion images, post content, or upload images through direct API calls.
+- [ ] No replies, reactions, editing, mentions, or non-image file attachments are added.
 
 ## Quality and deployment
 

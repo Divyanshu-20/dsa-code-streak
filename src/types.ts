@@ -46,7 +46,11 @@ export interface Comment {
   id: string
   problem_id: string
   user_id: string
-  message: string
+  message: string | null
+  image_path: string | null
+  image_url?: string | null
+  code_body: string | null
+  code_language: string | null
   created_at: string
   profile: Profile
 }
