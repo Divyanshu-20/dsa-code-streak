@@ -197,7 +197,7 @@ export function DiscussionPage() {
       <div className="page page--narrow discussion-page">
         <div className="page-heading discussion-heading">
           <p className="eyebrow"><MessageCircle size={15} /> Open discussion</p>
-          <h1>{problem?.title ?? 'Loading discussion…'}</h1>
+          <h1>{problem?.title ?? 'Loading discussion...'}</h1>
           <p>Share your approach, a screenshot, or a readable code solution with the group.</p>
         </div>
         <Feedback message={error} />
@@ -209,7 +209,7 @@ export function DiscussionPage() {
                   <div><strong>{comment.profile.display_name}</strong><time>{formatTimestamp(comment.created_at)}</time></div>
                   {isAdmin && (
                     <button className="comment-delete" type="button" disabled={deletingId === comment.id} onClick={() => void deleteComment(comment)} aria-label={`Delete ${comment.profile.display_name}'s post`}>
-                      <Trash2 size={15} /> {deletingId === comment.id ? 'Deleting…' : 'Delete'}
+                      <Trash2 size={15} /> {deletingId === comment.id ? 'Deleting...' : 'Delete'}
                     </button>
                   )}
                 </div>
@@ -231,12 +231,12 @@ export function DiscussionPage() {
                 )}
               </article>
             )) : (
-              <div className="empty-comments"><MessageCircle size={27} /><h2>No posts yet.</h2><p>Start the discussion after you’ve attempted the problem.</p></div>
+              <div className="empty-comments"><MessageCircle size={27} /><h2>No posts yet.</h2><p>Start the discussion after you've attempted the problem.</p></div>
             )}
           </div>
           <form className="comment-form" onSubmit={postComment}>
             <label htmlFor="comment">Add to the discussion</label>
-            <textarea id="comment" value={message} onChange={(event) => setMessage(event.target.value)} maxLength={1000} rows={4} placeholder="Explain your approach or ask the group a question…" />
+            <textarea id="comment" value={message} onChange={(event) => setMessage(event.target.value)} maxLength={1000} rows={4} placeholder="Explain your approach or ask the group a question..." />
 
             {imagePreview && (
               <div className="image-preview">
@@ -257,7 +257,7 @@ export function DiscussionPage() {
                   <button type="button" onClick={() => { setShowCodeEditor(false); setCodeBody('') }} aria-label="Remove code section"><X size={17} /></button>
                 </div>
                 <label htmlFor="code-body">Code section
-                  <textarea id="code-body" className="code-textarea" value={codeBody} onChange={(event) => setCodeBody(event.target.value)} maxLength={8000} rows={9} spellCheck={false} placeholder="Paste your code here…" />
+                  <textarea id="code-body" className="code-textarea" value={codeBody} onChange={(event) => setCodeBody(event.target.value)} maxLength={8000} rows={9} spellCheck={false} placeholder="Paste your code here..." />
                 </label>
                 <span className="code-count">{codeBody.length}/8000</span>
               </div>
@@ -271,7 +271,7 @@ export function DiscussionPage() {
                 </label>
                 <button className={`composer-tool ${showCodeEditor ? 'is-active' : ''}`} type="button" onClick={() => setShowCodeEditor(true)}><Code2 size={17} /> Code</button>
               </div>
-              <div className="comment-submit"><span>{message.trim().length}/1000</span><button className="button button--primary" disabled={busy || !canPost}>{busy ? 'Posting…' : 'Post'} {!busy && <Send size={16} />}</button></div>
+              <div className="comment-submit"><span>{message.trim().length}/1000</span><button className="button button--primary" disabled={busy || !canPost}>{busy ? 'Posting...' : 'Post'} {!busy && <Send size={16} />}</button></div>
             </div>
           </form>
         </section>

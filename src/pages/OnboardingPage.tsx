@@ -71,7 +71,7 @@ export function OnboardingPage() {
       <div className="page page--narrow onboarding-page">
         <div className="page-heading">
           <p className="eyebrow">Your accountability circle</p>
-          <h1>Choose where you’ll show up.</h1>
+          <h1>Choose where you'll show up.</h1>
           <p>
             {canCreateGroups
               ? 'Create a private group or enter an invite code.'
@@ -99,13 +99,13 @@ export function OnboardingPage() {
             <form className="card form-card" onSubmit={createGroup}>
               <span className="card-icon"><Plus size={20} /></span>
               <h2>Create a group</h2>
-              <p>You’ll become the owner and post the daily problem.</p>
+              <p>You'll become the owner and post the daily problem.</p>
               <label>
                 Group name
                 <input value={groupName} onChange={(event) => setGroupName(event.target.value)} required minLength={2} maxLength={80} placeholder="Nagpur DSA Circle" />
               </label>
               <button className="button button--primary button--wide" disabled={Boolean(busy)}>
-                {busy === 'create' ? 'Creating…' : 'Create group'}
+                {busy === 'create' ? 'Creating...' : 'Create group'}
               </button>
             </form>
           )}
@@ -119,12 +119,12 @@ export function OnboardingPage() {
               <input className="code-input" value={inviteCode} onChange={(event) => setInviteCode(event.target.value.toUpperCase())} required maxLength={12} placeholder="A1B2C3D4" />
             </label>
             <button className="button button--secondary button--wide" disabled={Boolean(busy)}>
-              {busy === 'join' ? 'Joining…' : 'Join group'}
+              {busy === 'join' ? 'Joining...' : 'Join group'}
             </button>
           </form>
         </div>
         <Feedback message={message} />
-        {loading && <p className="muted center">Checking your groups…</p>}
+        {loading && <p className="muted center">Checking your groups...</p>}
       </div>
     </AppShell>
   )

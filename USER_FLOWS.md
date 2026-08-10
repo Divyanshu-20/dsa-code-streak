@@ -28,15 +28,15 @@ Failure states:
 3. App also creates the owner's membership.
 4. App displays a copyable invite code/link.
 
-## 3. Admin publishes today's problem
+## 3. Admin publishes today's problems
 
-`Dashboard -> Add problem -> Enter fields -> Publish -> Dashboard`
+`Dashboard -> Add problem -> Enter fields -> Publish -> Dashboard -> Add another problem (optional)`
 
 Required fields: title, valid external URL, difficulty, and date. Platform defaults to LeetCode. Note is optional.
 
-If a problem already exists for that group and date, the app asks the admin to edit it rather than creating a second daily problem.
+After publishing, the dashboard keeps an **Add another problem** action available. Each problem can be edited or deleted independently.
 
-## 4. Member completes today's problem
+## 4. Member completes today's problems
 
 `Dashboard -> Open problem externally -> Return -> Mark done -> See updated progress`
 
@@ -44,7 +44,7 @@ If a problem already exists for that group and date, the app asks the admin to e
 2. Member returns after solving it.
 3. Member selects **Mark done**.
 4. App creates the member's completion record once.
-5. Button becomes **Completed** and count/member status update.
+5. That problem's button becomes **Completed** and the daily check-in count/member status update.
 6. Refresh preserves the completed state.
 7. Selecting **Undo** removes only that member's completion after confirmation or a clear second action.
 
@@ -52,9 +52,9 @@ If a problem already exists for that group and date, the app asks the admin to e
 
 The dashboard shows:
 
-- Today's problem or a clear "No problem posted" state.
-- `completed members / total active members`.
-- A simple completed/not completed status for every group member.
+- All of today's problems or a clear "No problem posted" state.
+- `completed problem check-ins / (total active members × today's problem count)`.
+- A completed-problems count for every group member.
 
 Members cannot edit other members' statuses.
 
@@ -64,8 +64,9 @@ Members cannot edit other members' statuses.
 
 - Rows represent current group members.
 - Columns represent the last seven calendar dates, including today.
-- A completed problem is shown as completed.
-- A posted but incomplete problem is shown as incomplete.
+- A date where every posted problem is completed is shown as completed.
+- A date where some posted problems are completed is shown as partly completed.
+- A date where no posted problems are completed is shown as incomplete.
 - A date without a posted problem is shown as no problem, not as a failure.
 - Values are calculated from `problems` and `completions`.
 

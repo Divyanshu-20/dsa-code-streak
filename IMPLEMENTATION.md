@@ -29,7 +29,7 @@ Route names may follow the generated project conventions, but the product needs 
 
 - `/login`
 - `/onboarding` for create/join group
-- `/group/:groupId` for today's problem and daily progress
+- `/group/:groupId` for today's problems and daily progress
 - `/group/:groupId/progress` for the seven-day heatmap
 - `/group/:groupId/problem/:problemId` for discussion
 - `/group/:groupId/admin/problem` for create/edit
@@ -41,7 +41,7 @@ Protected pages redirect unauthenticated users to sign in. Non-members must rece
 1. Connect Supabase and authentication.
 2. Create schema, constraints, indexes, and Row Level Security policies.
 3. Create/join group and membership checks.
-4. Admin creates today's problem.
+4. Admin creates one or more problems for today.
 5. Member marks/unmarks completion.
 6. Render daily count and member statuses from database records.
 7. Render the seven-day heatmap from problems and completions.
@@ -51,7 +51,7 @@ Protected pages redirect unauthenticated users to sign in. Non-members must rece
 
 ## UI behavior
 
-- Default to the current local date for today's problem while storing dates as a PostgreSQL `date`.
+- Default to the current local date for today's problems while storing dates as a PostgreSQL `date`.
 - Difficulty values: `Easy`, `Medium`, or `Hard`.
 - External problem links open safely in a new tab.
 - The completion button must clearly distinguish incomplete, saving, completed, and error states.

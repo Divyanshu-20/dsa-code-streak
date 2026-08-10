@@ -40,8 +40,19 @@ export function ProgressPage() {
 
   useEffect(() => { void load() }, [load])
 
-  const problemByDate = new Map(problems.map((problem) => [problem.problem_date, problem]))
-  const completed = new Set(completions.map((item) => `${item.problem_id}:${item.user_id}`))
+  const problemsByDate = useMemo(() => {
+    const grouped = new Map<string, Problem[]>()
+    for (const problem of problems) {
+      const dayProblems = grouped.get(problem.problem_date) ?? []
+      dayProblems.push(problem)
+      grouped.set(problem.problem_date, dayProblems)
+    }
+    return grouped
+  }, [problems])
+  const completed = useMemo(
+    () => new Set(completions.map((item) => `${item.problem_id}:${item.user_id}`)),
+    [completions],
+  )
 
   return (
     <AppShell backTo={`/group/${groupId}`} backLabel={group?.name ?? 'Dashboard'}>
@@ -49,7 +60,7 @@ export function ProgressPage() {
         <div className="page-heading">
           <p className="eyebrow">Last seven days</p>
           <h1>Consistency, made visible.</h1>
-          <p>A quiet record of the days your group showed up. Blank cells mean no problem was posted.</p>
+          <p>A day counts as complete after every posted problem is done. Blank cells mean no problem was posted.</p>
         </div>
         <Feedback message={message} />
 
@@ -61,9 +72,11 @@ export function ProgressPage() {
               <div className="heatmap-row" key={member.user_id}>
                 <div className="heatmap-name" title={member.profile.display_name}>{member.profile.display_name}</div>
                 {dates.map((date) => {
-                  const problem = problemByDate.get(date)
-                  const state = !problem ? 'empty' : completed.has(`${problem.id}:${member.user_id}`) ? 'done' : 'missed'
-                  return <div key={date} className={`heatmap-cell heatmap-cell--${state}`} title={`${member.profile.display_name} · ${date} · ${state === 'empty' ? 'No problem' : state === 'done' ? 'Completed' : 'Not completed'}`} />
+                  const dayProblems = problemsByDate.get(date) ?? []
+                  const completedCount = dayProblems.filter((problem) => completed.has(`${problem.id}:${member.user_id}`)).length
+                  const state = dayProblems.length === 0 ? 'empty' : completedCount === dayProblems.length ? 'done' : completedCount > 0 ? 'partial' : 'missed'
+                  const detail = dayProblems.length === 0 ? 'No problems' : `${completedCount} of ${dayProblems.length} completed`
+                  return <div key={date} className={`heatmap-cell heatmap-cell--${state}`} title={`${member.profile.display_name} | ${date} | ${detail}`} />
                 })}
               </div>
             ))}
@@ -72,6 +85,7 @@ export function ProgressPage() {
           <div className="heatmap-legend">
             <span><i className="heatmap-cell--empty" /> No problem</span>
             <span><i className="heatmap-cell--missed" /> Not completed</span>
+            <span><i className="heatmap-cell--partial" /> Partly completed</span>
             <span><i className="heatmap-cell--done" /> Completed</span>
           </div>
         </section>

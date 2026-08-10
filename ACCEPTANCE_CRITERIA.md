@@ -20,12 +20,14 @@ The prototype is ready to share only when all required items below pass on the d
 - [ ] Another authenticated user can join using the valid invite.
 - [ ] An invalid code shows a clear error and creates no membership.
 - [ ] Joining twice does not create duplicate membership rows.
+- [ ] The owner can remove another member after confirmation; the removed member loses group access but keeps their sign-in account.
+- [ ] A regular member cannot remove another member, and the owner cannot remove their own required membership, through the UI or direct API calls.
 
-## Today's problem
+## Today's problems
 
-- [ ] The owner can publish one problem for a chosen date with valid required fields.
-- [ ] A second problem for the same group/date is prevented and the owner is guided to edit.
-- [ ] Members can see today's problem and safely open its external URL in a new tab.
+- [ ] The owner can publish one or more problems for a chosen date with valid required fields.
+- [ ] After publishing one problem, the owner can add another for the same date from the dashboard.
+- [ ] Members can see all of today's problems and safely open each external URL in a new tab.
 - [ ] A regular member cannot create, edit, or delete a problem through UI or direct API calls.
 - [ ] The owner can edit a problem and the saved values persist after refresh.
 - [ ] The owner can delete after confirmation; related completions/comments are removed.
@@ -33,11 +35,11 @@ The prototype is ready to share only when all required items below pass on the d
 
 ## Completion
 
-Given a signed-in group member and a posted problem:
+Given a signed-in group member and one or more posted problems:
 
 - [ ] Selecting **Mark done** creates exactly one completion for that user/problem.
 - [ ] The control changes to a clear completed state while preventing duplicate clicks.
-- [ ] Daily completed count and that member's status update correctly.
+- [ ] Daily check-in count and that member's completed-problems status update correctly.
 - [ ] Refresh preserves the completed state.
 - [ ] Undo removes only the current user's completion and updates the view.
 - [ ] A user cannot create, change, or delete another user's completion through direct API calls.
@@ -45,15 +47,15 @@ Given a signed-in group member and a posted problem:
 
 ## Daily progress
 
-- [ ] The dashboard shows completed members divided by current group members.
-- [ ] Every current member has a clear completed/not completed status for today's problem.
+- [ ] The dashboard shows completed check-ins divided by current members multiplied by today's problem count.
+- [ ] Every current member has a clear completed-problems count for today.
 - [ ] Counts are derived from membership and completion records, not manually stored totals.
 - [ ] Two test accounts see the same result after refresh.
 
 ## Seven-day heatmap
 
 - [ ] Rows represent current group members and columns represent the last seven calendar dates.
-- [ ] Completed, incomplete, and no-problem dates are visually distinct.
+- [ ] Completed, partly completed, incomplete, and no-problem dates are visually distinct.
 - [ ] Data is derived from problems and completions.
 - [ ] The heatmap is readable without horizontal breakage at approximately 390 px width.
 - [ ] Empty or partially populated weeks render without errors.

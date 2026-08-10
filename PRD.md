@@ -28,10 +28,10 @@ Test one assumption: will a small DSA group voluntarily use a dedicated accounta
 
 1. **Authentication** - Google sign-in preferred; email/password is an acceptable fallback. Sessions persist.
 2. **Private group** - An admin creates a group. Members join using an invite code or link. Only members can access group data.
-3. **Today's problem** - The admin publishes one problem for a date with title, URL, platform, difficulty, and optional note.
+3. **Today's problems** - The admin publishes one or more problems for a date with title, URL, platform, difficulty, and optional note.
 4. **Completion** - A member marks or unmarks their own completion. State persists after refresh.
-5. **Daily progress** - Show completed count, total member count, and each member's status.
-6. **Weekly heatmap** - Show members as rows and the last seven dates as columns. Values are derived from problems and completions.
+5. **Daily progress** - Show completed check-ins, total available check-ins, and how many of today's problems each member completed.
+6. **Weekly heatmap** - Show members as rows and the last seven dates as columns. A date is complete only when all of its problems are complete; values are derived from problems and completions.
 7. **Open discussion** - Chronological posts per problem with short text, one private image attachment, and an optional formatted code section.
 8. **Admin controls** - Create, edit, or delete a problem and copy the invite code/link.
 
@@ -39,7 +39,7 @@ Test one assumption: will a small DSA group voluntarily use a dedicated accounta
 
 - Sign in
 - Create or join group
-- Group dashboard with today's problem and progress
+- Group dashboard with today's problems and progress
 - Seven-day progress view
 - Problem discussion
 - Minimal admin problem form
@@ -48,7 +48,7 @@ Test one assumption: will a small DSA group voluntarily use a dedicated accounta
 
 - Mobile-first because most users will open the link from chat.
 - Clean and modern, but not a dense corporate admin panel.
-- Today's problem and completion state dominate the dashboard.
+- Today's problems and their independent completion states dominate the dashboard.
 - Completion progress is visible without navigating elsewhere.
 - The heatmap may take visual inspiration from GitHub contribution activity.
 - Use cards and animation sparingly. Prioritize clear states and fast interaction.

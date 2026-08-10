@@ -6,7 +6,8 @@ CodeStreak is a mobile-first accountability app for small private DSA groups. An
 
 - One-tap Google sign-in plus email/password fallback with persistent Supabase sessions
 - Private group creation and invite-code joining
-- Owner-only daily problem creation, editing, and deletion
+- Owner-only daily problem creation, including multiple assignments on the same date, editing, and deletion
+- Owner-only member removal with database-enforced authorization
 - Member completion and undo with persisted shared status
 - Daily member progress and a derived seven-day heatmap
 - Rich problem discussion with text, private image attachments, and readable code sections

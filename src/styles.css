@@ -220,8 +220,9 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
 .dashboard-topline { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 28px; }
 .dashboard-topline h1 { font-size: clamp(2.35rem, 5vw, 3.9rem); margin: 0; }
 .dashboard-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(310px, .7fr); gap: 20px; align-items: start; }
+.problem-list { display: grid; gap: 16px; min-width: 0; }
 .problem-card, .progress-card { border: 1px solid var(--line); border-radius: 19px; background: #fff; box-shadow: var(--shadow); }
-.problem-card { min-height: 520px; padding: clamp(25px, 3.7vw, 40px); display: flex; flex-direction: column; position: relative; overflow: hidden; }
+.problem-card { min-height: 440px; padding: clamp(25px, 3.7vw, 40px); display: flex; flex-direction: column; position: relative; overflow: hidden; }
 .problem-card::before { content: ''; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, #0b8c44, #39b56d 58%, #d6f2df); }
 .problem-card::after { content: '</>'; position: absolute; right: -12px; bottom: 40px; font-family: 'Manrope', sans-serif; font-size: 8.5rem; font-weight: 800; letter-spacing: -.16em; color: rgba(12, 148, 71, .04); pointer-events: none; }
 .problem-card__header { display: flex; justify-content: space-between; align-items: flex-start; position: relative; z-index: 1; }
@@ -230,7 +231,7 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
 .difficulty--easy { color: #12733a; background: #e7f7ec; }
 .difficulty--medium { color: #9a5a03; background: #fff4dd; }
 .difficulty--hard { color: #a74039; background: #fff0ee; }
-.problem-copy { margin: auto 0; padding: 48px 0; position: relative; z-index: 1; }
+.problem-copy { margin: auto 0; padding: 38px 0; position: relative; z-index: 1; }
 .problem-copy .platform { color: var(--lime-deep); font-size: .81rem; font-weight: 800; }
 .problem-copy h2 { font-size: clamp(2.35rem, 5vw, 3.75rem); line-height: 1.04; letter-spacing: -.05em; margin: 12px 0 15px; max-width: 700px; }
 .problem-copy p { color: #69766d; line-height: 1.65; max-width: 620px; }
@@ -239,6 +240,9 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
 .button--complete.is-complete { background: var(--lime); color: #fff; border-color: var(--lime); }
 .discussion-link { display: inline-flex; align-items: center; gap: 9px; color: #fff; background: linear-gradient(145deg, #11a653, #08783a); border: 1px solid #08783a; border-radius: 12px; margin-top: 17px; padding: 11px 15px; font-size: .9rem; font-weight: 800; width: fit-content; position: relative; z-index: 1; box-shadow: 0 9px 22px rgba(12,148,71,.18); transition: border-color .2s, transform .2s, box-shadow .2s; }
 .discussion-link:hover { color: #fff; border-color: #076c34; transform: translateY(-1px); box-shadow: 0 12px 28px rgba(12,148,71,.26); }
+.problem-card__footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px; position: relative; z-index: 1; }
+.problem-card__footer > span { color: var(--muted); font-size: .75rem; font-weight: 750; padding-bottom: 11px; }
+.add-problem-button { width: fit-content; justify-self: end; }
 .empty-problem { margin: auto; text-align: center; max-width: 490px; position: relative; z-index: 1; }
 .empty-problem .eyebrow { justify-content: center; }
 .empty-problem h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin: 12px 0; }
@@ -258,6 +262,11 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
 .member-avatar { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: #e8f2ea; color: #315b3e; font-size: .68rem; font-weight: 800; }
 .member-name { display: flex; align-items: center; gap: 7px; font-size: .86rem; font-weight: 700; min-width: 0; }
 .member-name small { color: var(--lime-deep); font-size: .6rem; text-transform: uppercase; letter-spacing: .08em; }
+.member-actions { display: inline-flex; align-items: center; gap: 5px; }
+.member-remove { width: 30px; height: 30px; display: grid; place-items: center; border: 0; border-radius: 8px; background: transparent; color: #8b958d; cursor: pointer; }
+.member-remove:hover { color: var(--red); background: #fff0ee; }
+.member-remove:focus-visible { outline: 3px solid rgba(25, 164, 83, .24); outline-offset: 1px; }
+.member-remove:disabled { opacity: .5; cursor: wait; }
 .status-pill { font-size: .65rem; font-weight: 800; color: #7d8880; border: 1px solid #dfe7df; background: #f7f9f7; border-radius: 99px; padding: 4px 7px; }
 .status-pill.is-done { color: #12733a; background: var(--lime-soft); border-color: #bee2c8; }
 .dashboard-skeleton { min-height: 500px; border: 1px solid var(--line); border-radius: 19px; display: grid; place-items: center; color: var(--muted); background: #fff; box-shadow: var(--shadow); }
@@ -271,6 +280,7 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
 .heatmap-cell { aspect-ratio: 1.2; max-height: 52px; border-radius: 8px; border: 1px solid transparent; }
 .heatmap-cell--empty { background: #f0f4f0; border-color: #e2e9e2; }
 .heatmap-cell--missed { background: #fff4df; border-color: #f5d69d; }
+.heatmap-cell--partial { background: linear-gradient(145deg, #b9e8c7, #75ca91); border-color: #66b982; }
 .heatmap-cell--done { background: linear-gradient(145deg, #20ad5e, #0b8c44); border-color: #0b8c44; box-shadow: 0 7px 16px rgba(12, 148, 71, .1); }
 .heatmap-legend { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 17px; border-top: 1px solid var(--line); margin-top: 25px; padding-top: 17px; color: var(--muted); font-size: .71rem; }
 .heatmap-legend span { display: inline-flex; align-items: center; gap: 6px; }
@@ -351,12 +361,15 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
   .dashboard-topline { align-items: center; }
   .dashboard-topline h1 { font-size: 2.25rem; }
   .dashboard-topline .button { padding-inline: 12px; }
-  .problem-card { min-height: 500px; padding: 23px 19px; }
+  .problem-card { min-height: 430px; padding: 23px 19px; }
   .problem-copy { padding: 42px 0; }
   .problem-copy h2 { font-size: 2.45rem; }
   .problem-actions { display: grid; }
   .problem-actions .button { width: 100%; }
   .discussion-link { width: 100%; justify-content: center; }
+  .problem-card__footer { align-items: stretch; }
+  .problem-card__footer > span { padding: 0; text-align: center; }
+  .add-problem-button { width: 100%; }
   .progress-card { padding: 21px 17px; }
   .heatmap-card { padding: 20px 14px; overflow-x: auto; }
   .heatmap { grid-template-columns: 96px repeat(7, minmax(31px, 1fr)); gap: 5px; min-width: 0; }

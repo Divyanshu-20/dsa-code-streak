@@ -36,14 +36,14 @@ export async function loadMembers(groupId: string) {
   })) as Member[]
 }
 
-export async function loadProblem(groupId: string, date: string) {
+export async function loadProblems(groupId: string, date: string) {
   const { data, error } = await requireSupabase()
     .from('problems')
     .select('*')
     .eq('group_id', groupId)
     .eq('problem_date', date)
-    .maybeSingle()
+    .order('created_at', { ascending: true })
 
   if (error) throw error
-  return data as Problem | null
+  return (data ?? []) as Problem[]
 }

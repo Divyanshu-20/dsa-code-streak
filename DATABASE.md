@@ -43,7 +43,7 @@ The owner must also have a membership row.
 - `created_by uuid not null references profiles(id)`
 - `created_at timestamptz not null default now()`
 - `updated_at timestamptz not null default now()`
-- Unique constraint: `(group_id, problem_date)`
+- Multiple problems may share the same `(group_id, problem_date)`.
 
 ### `completions`
 
@@ -64,7 +64,7 @@ The owner must also have a membership row.
 ## Useful indexes
 
 - `group_members(user_id)`
-- `problems(group_id, problem_date desc)`; the unique constraint may already provide this index.
+- `problems(group_id, problem_date desc)`
 - `completions(problem_id)`
 - `completions(user_id)`
 - `comments(problem_id, created_at)`

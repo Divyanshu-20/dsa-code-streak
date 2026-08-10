@@ -7,3 +7,6 @@ dist
 npm-debug.log*
 tmp/
 supabase/.temp/
+
+.vercel
+.env*

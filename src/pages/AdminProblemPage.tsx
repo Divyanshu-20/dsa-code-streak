@@ -53,8 +53,7 @@ export function AdminProblemPage() {
       if (error) throw error
       navigate(`/group/${groupId}`)
     } catch (caught) {
-      const detail = errorMessage(caught)
-      setMessage(detail.includes('problems_group_id_problem_date_key') ? 'A problem already exists for this date. Open that problem and edit it instead.' : detail)
+      setMessage(errorMessage(caught))
     } finally {
       setBusy(false)
     }
@@ -79,8 +78,8 @@ export function AdminProblemPage() {
       <div className="page page--form">
         <div className="page-heading">
           <p className="eyebrow">Owner controls</p>
-          <h1>{problemId ? 'Edit the problem.' : 'Set today’s direction.'}</h1>
-          <p>Post one clear assignment. Members solve it on the original platform and check in here.</p>
+          <h1>{problemId ? 'Edit the problem.' : 'Add a problem.'}</h1>
+          <p>Publish an assignment for this date. You can add another problem from the dashboard whenever the group needs one.</p>
         </div>
         <form className="card problem-form" onSubmit={save}>
           <div className="form-grid">
@@ -94,7 +93,7 @@ export function AdminProblemPage() {
           <Feedback message={message} />
           <div className="form-actions">
             {problemId && <button className="button button--danger" type="button" disabled={busy} onClick={remove}><Trash2 size={17} /> Delete</button>}
-            <button className="button button--primary" disabled={busy}><Save size={17} /> {busy ? 'Saving…' : problemId ? 'Save changes' : 'Publish problem'}</button>
+            <button className="button button--primary" disabled={busy}><Save size={17} /> {busy ? 'Saving...' : problemId ? 'Save changes' : 'Publish problem'}</button>
           </div>
         </form>
       </div>

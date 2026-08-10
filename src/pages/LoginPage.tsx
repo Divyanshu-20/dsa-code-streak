@@ -131,7 +131,7 @@ export function LoginPage() {
 
           <button className="button button--google button--wide" type="button" disabled={Boolean(busy)} onClick={continueWithGoogle}>
             <span className="google-mark" aria-hidden="true">G</span>
-            {busy === 'google' ? 'Opening Google…' : 'Continue with Google'}
+            {busy === 'google' ? 'Opening Google...' : 'Continue with Google'}
           </button>
 
           <div className="auth-divider"><span>or use email</span></div>
@@ -154,7 +154,7 @@ export function LoginPage() {
             <Feedback message={message} />
             <Feedback message={success} tone="success" />
             <button className="button button--primary button--wide" disabled={Boolean(busy)}>
-              {busy === 'email' ? 'Please wait…' : mode === 'signin' ? 'Sign in' : 'Create account'}
+              {busy === 'email' ? 'Please wait...' : mode === 'signin' ? 'Sign in' : 'Create account'}
               {!busy && <ArrowRight size={18} />}
             </button>
           </form>
