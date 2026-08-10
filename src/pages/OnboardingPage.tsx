@@ -3,11 +3,15 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { AppShell } from '../components/AppShell'
 import { Feedback } from '../components/Feedback'
+import { useAuth } from '../context/AuthContext'
 import { errorMessage, requireSupabase } from '../lib/supabase'
 import type { Group } from '../types'
 
+const CENTRAL_ADMIN_EMAIL = 'media.divy4nshu@gmail.com'
+
 export function OnboardingPage() {
   const navigate = useNavigate()
+  const { user } = useAuth()
   const [searchParams] = useSearchParams()
   const [groups, setGroups] = useState<Group[]>([])
   const [groupName, setGroupName] = useState('')
@@ -15,6 +19,7 @@ export function OnboardingPage() {
   const [busy, setBusy] = useState<'create' | 'join' | ''>('')
   const [loading, setLoading] = useState(true)
   const [message, setMessage] = useState('')
+  const canCreateGroups = user?.email?.toLowerCase() === CENTRAL_ADMIN_EMAIL
 
   async function loadGroups() {
     setLoading(true)
@@ -67,7 +72,11 @@ export function OnboardingPage() {
         <div className="page-heading">
           <p className="eyebrow">Your accountability circle</p>
           <h1>Choose where you’ll show up.</h1>
-          <p>Create a private group or enter the invite code shared by your group admin.</p>
+          <p>
+            {canCreateGroups
+              ? 'Create a private group or enter an invite code.'
+              : 'Enter the private invite code shared by your central admin.'}
+          </p>
         </div>
 
         {groups.length > 0 && (
@@ -86,18 +95,20 @@ export function OnboardingPage() {
         )}
 
         <div className="choice-grid">
-          <form className="card form-card" onSubmit={createGroup}>
-            <span className="card-icon"><Plus size={20} /></span>
-            <h2>Create a group</h2>
-            <p>You’ll become the owner and post the daily problem.</p>
-            <label>
-              Group name
-              <input value={groupName} onChange={(event) => setGroupName(event.target.value)} required minLength={2} maxLength={80} placeholder="Nagpur DSA Circle" />
-            </label>
-            <button className="button button--primary button--wide" disabled={Boolean(busy)}>
-              {busy === 'create' ? 'Creating…' : 'Create group'}
-            </button>
-          </form>
+          {canCreateGroups && (
+            <form className="card form-card" onSubmit={createGroup}>
+              <span className="card-icon"><Plus size={20} /></span>
+              <h2>Create a group</h2>
+              <p>You’ll become the owner and post the daily problem.</p>
+              <label>
+                Group name
+                <input value={groupName} onChange={(event) => setGroupName(event.target.value)} required minLength={2} maxLength={80} placeholder="Nagpur DSA Circle" />
+              </label>
+              <button className="button button--primary button--wide" disabled={Boolean(busy)}>
+                {busy === 'create' ? 'Creating…' : 'Create group'}
+              </button>
+            </form>
+          )}
 
           <form className="card form-card" onSubmit={joinGroup}>
             <span className="card-icon card-icon--soft"><Copy size={20} /></span>
