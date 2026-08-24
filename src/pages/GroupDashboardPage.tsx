@@ -5,13 +5,31 @@ import { AppShell } from '../components/AppShell'
 import { Feedback } from '../components/Feedback'
 import { useAuth } from '../context/AuthContext'
 import { useCommunityDate } from '../hooks/useCommunityDate'
+import { formatCheckInCounts, summarizeCheckIns } from '../lib/checkIns'
+import type { CheckInCounts, CheckInSelection } from '../lib/checkIns'
 import { loadDailySchedule, loadGroup, loadMembers } from '../lib/data'
 import { formatCommunityDate } from '../lib/date'
 import { errorMessage, requireSupabase } from '../lib/supabase'
-import type { Completion, Group, Member, Problem, ScheduleDay } from '../types'
+import type { Group, Member, Problem, ProblemCheckIn, ScheduleDay } from '../types'
+
+const CHECK_IN_OPTIONS: { value: CheckInSelection; label: string }[] = [
+  { value: 'not_started', label: 'Not started' },
+  { value: 'attempted', label: 'Attempted' },
+  { value: 'needs_help', label: 'Need help' },
+  { value: 'solved', label: 'Solved' },
+]
 
 function initials(name: string) {
   return name.split(/\s+/).slice(0, 2).map((part) => part[0]).join('').toUpperCase()
+}
+
+function memberStatus(counts: CheckInCounts) {
+  if (counts.total === 0) return { label: '-', className: '' }
+  if (counts.solved === counts.total) return { label: 'All solved', className: 'is-done' }
+  if (counts.needsHelp > 0) return { label: `${counts.needsHelp} need help`, className: 'needs-help' }
+  if (counts.attempted > 0) return { label: `${counts.solved} solved · ${counts.attempted} attempted`, className: 'has-attempt' }
+  if (counts.solved > 0) return { label: `${counts.solved}/${counts.total} solved`, className: 'has-attempt' }
+  return { label: 'Not started', className: '' }
 }
 
 export function GroupDashboardPage() {
@@ -22,7 +40,7 @@ export function GroupDashboardPage() {
   const [members, setMembers] = useState<Member[]>([])
   const [scheduleDay, setScheduleDay] = useState<ScheduleDay | null>(null)
   const [problems, setProblems] = useState<Problem[]>([])
-  const [completions, setCompletions] = useState<Completion[]>([])
+  const [checkIns, setCheckIns] = useState<ProblemCheckIn[]>([])
   const [loading, setLoading] = useState(true)
   const [savingProblemId, setSavingProblemId] = useState<string | null>(null)
   const [removingUserId, setRemovingUserId] = useState<string | null>(null)
@@ -45,14 +63,14 @@ export function GroupDashboardPage() {
       setProblems(nextProblems)
       if (nextProblems.length) {
         const { data, error } = await requireSupabase()
-          .from('completions')
+          .from('problem_check_ins')
           .select('*')
           .in('problem_id', nextProblems.map((problem) => problem.id))
         if (error) throw error
         const currentMemberIds = new Set(nextMembers.map((member) => member.user_id))
-        setCompletions(((data ?? []) as Completion[]).filter((completion) => currentMemberIds.has(completion.user_id)))
+        setCheckIns(((data ?? []) as ProblemCheckIn[]).filter((checkIn) => currentMemberIds.has(checkIn.user_id)))
       } else {
-        setCompletions([])
+        setCheckIns([])
       }
     } catch (error) {
       setMessage('This group could not be loaded. You may not be a member, or the link is invalid.')
@@ -64,42 +82,72 @@ export function GroupDashboardPage() {
 
   useEffect(() => { void load() }, [load])
 
-  const completionSummary = useMemo(() => {
-    const countByProblemId = new Map<string, number>()
-    const completedProblemIdsByUser = new Map<string, Set<string>>()
-    const ownByProblemId = new Map<string, Completion>()
+  const totalCheckInSlots = members.length * problems.length
+  const checkInSummary = useMemo(() => {
+    const byProblemId = new Map<string, ProblemCheckIn[]>()
+    const byUserId = new Map<string, ProblemCheckIn[]>()
+    const ownByProblemId = new Map<string, ProblemCheckIn>()
 
-    for (const completion of completions) {
-      countByProblemId.set(completion.problem_id, (countByProblemId.get(completion.problem_id) ?? 0) + 1)
-      const userProblemIds = completedProblemIdsByUser.get(completion.user_id) ?? new Set<string>()
-      userProblemIds.add(completion.problem_id)
-      completedProblemIdsByUser.set(completion.user_id, userProblemIds)
-      if (completion.user_id === user?.id) ownByProblemId.set(completion.problem_id, completion)
+    for (const checkIn of checkIns) {
+      const problemCheckIns = byProblemId.get(checkIn.problem_id) ?? []
+      problemCheckIns.push(checkIn)
+      byProblemId.set(checkIn.problem_id, problemCheckIns)
+
+      const memberCheckIns = byUserId.get(checkIn.user_id) ?? []
+      memberCheckIns.push(checkIn)
+      byUserId.set(checkIn.user_id, memberCheckIns)
+
+      if (checkIn.user_id === user?.id) ownByProblemId.set(checkIn.problem_id, checkIn)
     }
 
-    return { countByProblemId, completedProblemIdsByUser, ownByProblemId }
-  }, [completions, user?.id])
-  const totalCheckIns = members.length * problems.length
+    return {
+      byProblemId,
+      byUserId,
+      ownByProblemId,
+      totals: summarizeCheckIns(checkIns, totalCheckInSlots),
+    }
+  }, [checkIns, totalCheckInSlots, user?.id])
   const isOwner = group?.owner_id === user?.id
 
-  async function toggleCompletion(problem: Problem) {
+  async function saveCheckIn(problem: Problem, status: CheckInSelection) {
     if (!user) return
-    const myCompletion = completions.find((item) => item.problem_id === problem.id && item.user_id === user.id)
-    if (myCompletion && !window.confirm(`Undo your completion for ${problem.title}?`)) return
+    const existing = checkInSummary.ownByProblemId.get(problem.id)
+    if (status === (existing?.status ?? 'not_started')) return
+
     setSavingProblemId(problem.id)
     setMessage('')
     try {
-      if (myCompletion) {
-        const { error } = await requireSupabase().from('completions').delete().eq('id', myCompletion.id)
+      if (status === 'not_started') {
+        if (!existing) return
+        const { error } = await requireSupabase()
+          .from('problem_check_ins')
+          .delete()
+          .eq('id', existing.id)
         if (error) throw error
+        setCheckIns((current) => current.filter((checkIn) => checkIn.id !== existing.id))
+      } else if (existing) {
+        const { data, error } = await requireSupabase()
+          .from('problem_check_ins')
+          .update({ status })
+          .eq('id', existing.id)
+          .select('*')
+          .single()
+        if (error) throw error
+        const saved = data as ProblemCheckIn
+        setCheckIns((current) => current.map((checkIn) => checkIn.id === saved.id ? saved : checkIn))
       } else {
-        const { error } = await requireSupabase().from('completions').insert({ problem_id: problem.id, user_id: user.id })
+        const { data, error } = await requireSupabase()
+          .from('problem_check_ins')
+          .insert({ problem_id: problem.id, user_id: user.id, status })
+          .select('*')
+          .single()
         if (error) throw error
+        setCheckIns((current) => [...current, data as ProblemCheckIn])
       }
-      await load()
     } catch (error) {
-      setMessage(errorMessage(error))
+      const failureMessage = errorMessage(error)
       await load()
+      setMessage(failureMessage)
     } finally {
       setSavingProblemId(null)
     }
@@ -182,8 +230,9 @@ export function GroupDashboardPage() {
                 {problems.length ? (
                   <>
                     {problems.map((problem, index) => {
-                      const myCompletion = completionSummary.ownByProblemId.get(problem.id)
-                      const problemCompletionCount = completionSummary.countByProblemId.get(problem.id) ?? 0
+                      const myCheckIn = checkInSummary.ownByProblemId.get(problem.id)
+                      const selectedStatus = myCheckIn?.status ?? 'not_started'
+                      const problemCounts = summarizeCheckIns(checkInSummary.byProblemId.get(problem.id) ?? [], members.length)
                       const saving = savingProblemId === problem.id
                       return (
                         <section className="problem-card" key={problem.id}>
@@ -210,16 +259,38 @@ export function GroupDashboardPage() {
                                 Open problem <ArrowUpRight size={17} />
                               </a>
                             )}
-                            <button className={`button button--complete ${myCompletion ? 'is-complete' : ''}`} type="button" disabled={saving} onClick={() => void toggleCompletion(problem)}>
-                              <CheckCircle2 size={19} />
-                              {saving ? 'Saving...' : myCompletion ? 'Completed - Undo' : 'Mark done'}
-                            </button>
+                          </div>
+                          <div className="check-in-control">
+                            <div className="check-in-control__heading">
+                              <span>Your check-in</span>
+                              {saving && <small role="status">Saving...</small>}
+                            </div>
+                            <div className="check-in-options" role="group" aria-label={`Your check-in for ${problem.title}`}>
+                              {CHECK_IN_OPTIONS.map((option) => (
+                                <button
+                                  className={`check-in-option check-in-option--${option.value} ${selectedStatus === option.value ? 'is-selected' : ''}`}
+                                  type="button"
+                                  key={option.value}
+                                  disabled={saving}
+                                  aria-pressed={selectedStatus === option.value}
+                                  onClick={() => void saveCheckIn(problem, option.value)}
+                                >
+                                  {option.value === 'solved' && <CheckCircle2 size={16} />}
+                                  {option.label}
+                                </button>
+                              ))}
+                            </div>
+                            {selectedStatus === 'needs_help' && (
+                              <Link className="check-in-help-link" to={`/group/${groupId}/problem/${problem.id}`}>
+                                Tell the group what is blocking you <ArrowUpRight size={14} />
+                              </Link>
+                            )}
                           </div>
                           <div className="problem-card__footer">
                             <Link className="discussion-link" to={`/group/${groupId}/problem/${problem.id}`}>
                               <MessageCircle size={17} /> Open discussion
                             </Link>
-                            <span>{problemCompletionCount} of {members.length} done</span>
+                            <span>{formatCheckInCounts(problemCounts)}</span>
                           </div>
                         </section>
                       )
@@ -258,24 +329,25 @@ export function GroupDashboardPage() {
                 <div className="progress-card__top">
                   <div>
                     <p className="eyebrow">Today's check-ins</p>
-                    {problems.length ? <h2>{completions.length}<span> / {totalCheckIns}</span></h2> : <h2 className="progress-card__quiet">-</h2>}
+                    {problems.length ? <h2>{checkInSummary.totals.checkedIn}<span> / {totalCheckInSlots}</span></h2> : <h2 className="progress-card__quiet">-</h2>}
                   </div>
                   <span className="progress-icon"><Users size={20} /></span>
                 </div>
-                <div className="progress-bar" aria-label={`${completions.length} of ${totalCheckIns} problem check-ins completed`}>
-                  <span style={{ width: `${totalCheckIns ? Math.round((completions.length / totalCheckIns) * 100) : 0}%` }} />
+                <div className="progress-bar" aria-label={`${checkInSummary.totals.checkedIn} of ${totalCheckInSlots} problem statuses updated`}>
+                  <span style={{ width: `${totalCheckInSlots ? Math.round((checkInSummary.totals.checkedIn / totalCheckInSlots) * 100) : 0}%` }} />
                 </div>
+                {problems.length > 0 && <p className="check-in-summary-line">{formatCheckInCounts(checkInSummary.totals)}</p>}
                 <div className="member-list">
                   {members.map((member) => {
-                    const completedCount = completionSummary.completedProblemIdsByUser.get(member.user_id)?.size ?? 0
-                    const done = problems.length > 0 && completedCount === problems.length
+                    const counts = summarizeCheckIns(checkInSummary.byUserId.get(member.user_id) ?? [], problems.length)
+                    const status = problems.length > 0 ? memberStatus(counts) : { label: scheduleDay ? 'No check-in' : '-', className: '' }
                     return (
                       <div className="member-row" key={member.user_id}>
                         <span className="member-avatar">{initials(member.profile.display_name)}</span>
                         <span className="member-name">{member.profile.display_name}{member.user_id === user?.id && <small>You</small>}</span>
                         <span className="member-actions">
-                          <span className={`status-pill ${done ? 'is-done' : ''}`}>
-                            {done ? 'All done' : problems.length ? `${completedCount}/${problems.length} done` : scheduleDay ? 'No check-in' : '-'}
+                          <span className={`status-pill ${status.className}`}>
+                            {status.label}
                           </span>
                           {isOwner && member.user_id !== user?.id && (
                             <button

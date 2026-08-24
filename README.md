@@ -1,6 +1,6 @@
 # CodeStreak
 
-CodeStreak is a mobile-first accountability app for small private DSA groups. An owner posts one daily problem, members solve it on the original platform, mark completion, and see shared consistency without chat noise.
+CodeStreak is a mobile-first accountability app for small private DSA groups. An owner posts daily problems, members solve them on the original platform, honestly check in, and see shared consistency without chat noise.
 
 ## Included prototype
 
@@ -9,8 +9,8 @@ CodeStreak is a mobile-first accountability app for small private DSA groups. An
 - Owner-only daily problem creation, including multiple assignments on the same date, editing, and deletion
 - Automatic Day 13-102 roadmap publishing at midnight in Asia/Kolkata, including recovery, revision, and mock days
 - Owner-only member removal with database-enforced authorization
-- Member completion and undo with persisted shared status
-- Daily member progress and a derived seven-day heatmap
+- Honest member check-ins with not started, attempted, need help, and solved states
+- Daily status breakdowns and a derived seven-day heatmap
 - Rich problem discussion with text, private image attachments, and readable code sections
 - Owner moderation for deleting discussion posts
 - PostgreSQL constraints, atomic group RPCs, and Row Level Security policies
@@ -64,4 +64,4 @@ Before sharing, test with separate owner and member accounts and complete the ch
 
 ## One-week market test
 
-Share the deployed link with the existing 10–15 person DSA group. Measure invited users who register, regular completion check-ins, continued use after two weeks, and where the flow causes confusion. Improve only from observed usage.
+Share the deployed link with the existing 10–15 person DSA group. Measure invited users who register, regular status check-ins, help requests that receive useful replies, continued use after two weeks, and where the flow causes confusion. Improve only from observed usage.

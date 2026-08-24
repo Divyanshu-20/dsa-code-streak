@@ -2,11 +2,11 @@
 
 ## Product summary
 
-A lightweight accountability web app for one small private DSA study group. Members solve problems on LeetCode or another external platform, then use this app to record completion, see group consistency, and discuss a problem briefly.
+A lightweight accountability web app for one small private DSA study group. Members attempt problems on LeetCode or another external platform, then use this app to report progress honestly, request help, see group consistency, and discuss a problem briefly.
 
 Core loop:
 
-`See problem -> Solve externally -> Mark done -> See group progress -> Stay consistent`
+`See problem -> Attempt externally -> Check in honestly -> Ask for help or solve -> See group progress`
 
 The app is not a coding platform and must not attempt to replace LeetCode.
 
@@ -29,9 +29,9 @@ Test one assumption: will a small DSA group voluntarily use a dedicated accounta
 1. **Authentication** - Google sign-in preferred; email/password is an acceptable fallback. Sessions persist.
 2. **Private group** - An admin creates a group. Members join using an invite code or link. Only members can access group data.
 3. **Today's problems** - The admin publishes one or more problems for a date with title, URL, platform, difficulty, and optional note.
-4. **Completion** - A member marks or unmarks their own completion. State persists after refresh.
-5. **Daily progress** - Show completed check-ins, total available check-ins, and how many of today's problems each member completed.
-6. **Weekly heatmap** - Show members as rows and the last seven dates as columns. A date is complete only when all of its problems are complete; values are derived from problems and completions.
+4. **Honest check-in** - For each problem, a member selects not started, attempted, need help, or solved. The three active states persist after refresh; not started is represented by no check-in row.
+5. **Daily progress** - Show solved, attempted, need help, and not started counts across all available member/problem slots, plus a concise status for every member.
+6. **Weekly heatmap** - Show members as rows and the last seven dates as columns. A date is complete only when all of its problems are solved; attempts and help requests count as partial progress. Values are derived from problems and check-ins.
 7. **Open discussion** - Chronological posts per problem with short text, one private image attachment, and an optional formatted code section.
 8. **Admin controls** - Create, edit, or delete a problem and copy the invite code/link.
 
@@ -48,8 +48,8 @@ Test one assumption: will a small DSA group voluntarily use a dedicated accounta
 
 - Mobile-first because most users will open the link from chat.
 - Clean and modern, but not a dense corporate admin panel.
-- Today's problems and their independent completion states dominate the dashboard.
-- Completion progress is visible without navigating elsewhere.
+- Today's problems and their independent check-in states dominate the dashboard.
+- The honest check-in controls and group status breakdown are visible without navigating elsewhere.
 - The heatmap may take visual inspiration from GitHub contribution activity.
 - Use cards and animation sparingly. Prioritize clear states and fast interaction.
 
@@ -69,7 +69,7 @@ Do not implement out-of-scope items even if they appear easy.
 ## Success signals
 
 - More than 60% of invited users register.
-- Roughly 40-50% or more of members regularly mark completion.
+- Roughly 40-50% or more of members regularly record an honest status.
 - Members still use the app after two weeks.
 - Members open it without repeated reminders.
 - Users can understand the core loop with little explanation.

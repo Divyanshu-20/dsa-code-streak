@@ -18,7 +18,7 @@ Build the simplest production-usable prototype for 10-50 users. Optimize for a r
 - Use the existing Lovable/Supabase client and component patterns.
 - Keep dependencies minimal and avoid abstraction layers for hypothetical growth.
 - Use direct Supabase queries from the app where Row Level Security safely permits them.
-- Do not store derived daily counts, percentages, streaks, or heatmap cells.
+- Do not store derived daily counts, percentages, streaks, or heatmap cells. Store only one status row per member/problem.
 - Do not add real-time subscriptions unless the basic query-and-refresh behavior is already correct and the addition is trivial.
 - Do not add external analytics, queues, background jobs, storage buckets, or edge functions unless a documented requirement cannot work without one.
 - Pre-schedule the fixed Day 13-102 roadmap and gate rows with `publish_at`; do not add a Cron job for deterministic calendar data.
@@ -43,9 +43,9 @@ Protected pages redirect unauthenticated users to sign in. Non-members must rece
 2. Create schema, constraints, indexes, and Row Level Security policies.
 3. Create/join group and membership checks.
 4. Install the canonical roadmap for the target group while preserving owner-added problems.
-5. Member marks/unmarks completion.
-6. Render daily count and member statuses from database records.
-7. Render the seven-day heatmap from problems and completions.
+5. Member records not started, attempted, need help, or solved for each problem.
+6. Render the daily four-state breakdown and member statuses from check-in records.
+7. Render the seven-day heatmap from problems and check-ins.
 8. Add discussion posts with private image storage, formatted code sections, and owner moderation.
 9. Add loading, empty, validation, and error states.
 10. Verify mobile layout, access isolation, refresh persistence, and Vercel production build.
@@ -56,9 +56,9 @@ Protected pages redirect unauthenticated users to sign in. Non-members must rece
 - Difficulty values: `Basic`, `Easy`, `Medium`, or `Hard`.
 - External problem links open safely in a new tab; URL-free drills render a self-contained in-app prompt.
 - Rest, revision, and zero-problem mock days render their schedule instructions rather than a generic empty state.
-- The completion button must clearly distinguish incomplete, saving, completed, and error states.
+- The check-in control must clearly distinguish not started, attempted, need help, solved, saving, and error states.
 - Disable duplicate form submission while a request is pending.
-- Confirm before deleting a problem because its completions and comments will also be removed.
+- Confirm before deleting a problem because its check-ins and comments will also be removed.
 - Empty states should tell the user what to do next.
 
 ## Environment and deployment

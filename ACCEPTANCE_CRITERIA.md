@@ -30,7 +30,7 @@ The prototype is ready to share only when all required items below pass on the d
 - [ ] Members can see all of today's problems and safely open each external URL in a new tab.
 - [ ] A regular member cannot create, edit, or delete a problem through UI or direct API calls.
 - [ ] The owner can edit a problem and the saved values persist after refresh.
-- [ ] The owner can delete after confirmation; related completions/comments are removed.
+- [ ] The owner can delete after confirmation; related check-ins/comments are removed.
 - [ ] If no problem exists today, the dashboard shows a useful empty state.
 
 ## Automated roadmap
@@ -43,30 +43,32 @@ The prototype is ready to share only when all required items below pass on the d
 - [ ] Rest, revision, and zero-problem mock days show their roadmap instructions instead of the generic empty state.
 - [ ] Running the roadmap installer again updates official content without duplicating schedule days or problems.
 
-## Completion
+## Honest daily check-in
 
 Given a signed-in group member and one or more posted problems:
 
-- [ ] Selecting **Mark done** creates exactly one completion for that user/problem.
-- [ ] The control changes to a clear completed state while preventing duplicate clicks.
-- [ ] Daily check-in count and that member's completed-problems status update correctly.
-- [ ] Refresh preserves the completed state.
-- [ ] Undo removes only the current user's completion and updates the view.
-- [ ] A user cannot create, change, or delete another user's completion through direct API calls.
+- [ ] Selecting **Attempted**, **Need help**, or **Solved** creates exactly one check-in for that user/problem.
+- [ ] Changing the selection updates the existing row instead of creating a duplicate.
+- [ ] Selecting **Not started** deletes only the current user's check-in.
+- [ ] The control clearly displays the selected state and prevents duplicate clicks while saving.
+- [ ] Selecting **Need help** exposes a direct link to the problem discussion.
+- [ ] Refresh preserves the latest active status.
+- [ ] A user cannot create, change, or delete another user's check-in through direct API calls.
 - [ ] Errors show a useful message and the UI returns to the database's real state.
 
 ## Daily progress
 
-- [ ] The dashboard shows completed check-ins divided by current members multiplied by today's problem count.
-- [ ] Every current member has a clear completed-problems count for today.
-- [ ] Counts are derived from membership and completion records, not manually stored totals.
+- [ ] The dashboard shows updated check-ins divided by current members multiplied by today's problem count.
+- [ ] The dashboard shows mutually exclusive solved, attempted, need help, and not started counts that add up to all member/problem slots.
+- [ ] Every current member has a concise status for today, including all solved, needs help, attempted, partly solved, or not started.
+- [ ] Counts are derived from membership and check-in records, not manually stored totals.
 - [ ] Two test accounts see the same result after refresh.
 
 ## Seven-day heatmap
 
 - [ ] Rows represent current group members and columns represent the last seven calendar dates.
-- [ ] Completed, partly completed, incomplete, and no-problem dates are visually distinct.
-- [ ] Data is derived from problems and completions.
+- [ ] All-solved, partial check-in, not-started, and no-problem dates are visually distinct.
+- [ ] Data is derived from problems and check-ins.
 - [ ] The heatmap is readable without horizontal breakage at approximately 390 px width.
 - [ ] Empty or partially populated weeks render without errors.
 
@@ -84,7 +86,7 @@ Given a signed-in group member and one or more posted problems:
 
 ## Quality and deployment
 
-- [ ] Sign-in, join, dashboard, completion, progress, and sign-out work on the Vercel production URL.
+- [ ] Sign-in, join, dashboard, status check-in, progress, and sign-out work on the Vercel production URL.
 - [ ] Direct loading of a protected route behaves correctly.
 - [ ] Loading, empty, validation, and error states are clear.
 - [ ] Core screens are usable at approximately 390 px and at desktop width.
@@ -94,4 +96,4 @@ Given a signed-in group member and one or more posted problems:
 
 ## Share decision
 
-If any access-control, completion-persistence, or production-deployment criterion fails, do not share the app yet. Cosmetic issues may be recorded and fixed after the first user test if they do not block the core loop.
+If any access-control, check-in persistence, or production-deployment criterion fails, do not share the app yet. Cosmetic issues may be recorded and fixed after the first user test if they do not block the core loop.

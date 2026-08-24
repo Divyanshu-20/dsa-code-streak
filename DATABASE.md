@@ -56,13 +56,17 @@ The owner must also have a membership row.
 - Stores week/day metadata, day kind, topic, milestone, instructions, and `publish_at`.
 - Roadmap problems reference the schedule day; rest, revision, and zero-problem mock days still have schedule metadata.
 
-### `completions`
+### `problem_check_ins`
 
 - `id uuid primary key default gen_random_uuid()`
 - `problem_id uuid not null references problems(id) on delete cascade`
 - `user_id uuid not null references profiles(id) on delete cascade`
-- `completed_at timestamptz not null default now()`
+- `status text not null check (status in ('attempted', 'needs_help', 'solved'))`
+- `created_at timestamptz not null default now()`
+- `updated_at timestamptz not null default now()`
 - Unique constraint: `(problem_id, user_id)`
+
+No row means the member has not started that problem. Existing completion rows migrate to `solved`.
 
 ### `comments`
 
@@ -76,8 +80,8 @@ The owner must also have a membership row.
 
 - `group_members(user_id)`
 - `problems(group_id, problem_date desc)`
-- `completions(problem_id)`
-- `completions(user_id)`
+- `problem_check_ins(problem_id)`
+- `problem_check_ins(user_id)`
 - `comments(problem_id, created_at)`
 
 Do not add derived heatmap or daily-summary tables.
@@ -110,11 +114,12 @@ Policies may use small `security definer` membership helper functions if needed 
 - Only the group owner may insert, update, or delete problems for that group.
 - `created_by` must equal the authenticated user on insert.
 
-### Completions
+### Problem check-ins
 
-- Group members may read completions only for published problems in their group.
-- A user may insert or delete only their own completion and only for a published problem in a group they belong to.
-- No user may update a completion to another user/problem.
+- Group members may read check-ins only for published problems in their group.
+- A user may insert, update, or delete only their own check-in and only for a published problem in a group they belong to.
+- Client inserts may set only `problem_id`, `user_id`, and `status`; client updates may change only `status`.
+- No user may create, change, or delete another user's check-in.
 
 ### Comments
 
@@ -125,12 +130,12 @@ Policies may use small `security definer` membership helper functions if needed 
 ## Integrity checks
 
 - Attempting a duplicate group membership fails harmlessly.
-- Attempting a duplicate completion fails harmlessly.
+- Attempting a duplicate check-in fails harmlessly.
 - A non-member cannot read a group through direct API calls, not just through hidden UI.
 - A member cannot create a problem by calling Supabase directly.
-- A user cannot create or delete another user's completion.
-- Deleting a problem removes its completions and comments.
-- Heatmap and daily counts are query results, never independent stored state.
+- A user cannot create, change, or delete another user's check-in.
+- Deleting a problem removes its check-ins and comments.
+- Heatmap and four-state daily counts are query results, never independent stored state.
 
 ## Data handling
 

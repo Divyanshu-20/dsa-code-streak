@@ -76,7 +76,7 @@ export function AdminProblemPage() {
   }
 
   async function remove() {
-    if (!problemId || !window.confirm('Delete this problem? Its completions and comments will also be removed.')) return
+    if (!problemId || !window.confirm('Delete this problem? Its check-ins and comments will also be removed.')) return
     setBusy(true)
     setMessage('')
     try {

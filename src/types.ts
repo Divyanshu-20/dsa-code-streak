@@ -57,11 +57,15 @@ export interface Problem {
   updated_at: string
 }
 
-export interface Completion {
+export type CheckInStatus = 'attempted' | 'needs_help' | 'solved'
+
+export interface ProblemCheckIn {
   id: string
   problem_id: string
   user_id: string
-  completed_at: string
+  status: CheckInStatus
+  created_at: string
+  updated_at: string
 }
 
 export interface Comment {

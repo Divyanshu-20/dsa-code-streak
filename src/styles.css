@@ -246,8 +246,20 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
 .problem-prompt { padding: 14px 16px; border-left: 3px solid #6ac286; border-radius: 0 10px 10px 0; background: #f5faf6; color: #445249 !important; white-space: pre-wrap; }
 .problem-note { font-size: .88rem; }
 .problem-actions { display: flex; flex-wrap: wrap; gap: 10px; position: relative; z-index: 1; }
-.button--complete { background: #f3f7f3; border-color: #dce6dc; color: #435047; }
-.button--complete.is-complete { background: var(--lime); color: #fff; border-color: var(--lime); }
+.check-in-control { position: relative; z-index: 1; margin-top: 16px; padding: 14px; border: 1px solid #dfe7df; border-radius: 14px; background: #f8faf8; }
+.check-in-control__heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; color: #47544b; font-size: .75rem; font-weight: 800; }
+.check-in-control__heading small { color: var(--muted); font-size: .7rem; font-weight: 700; }
+.check-in-options { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; }
+.check-in-option { min-height: 38px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid #d7e0d8; border-radius: 10px; background: #fff; color: #667269; cursor: pointer; font-size: .73rem; font-weight: 800; transition: color .18s, background .18s, border-color .18s, box-shadow .18s, transform .18s; }
+.check-in-option:hover:not(:disabled) { border-color: #aebdb1; color: #344239; transform: translateY(-1px); }
+.check-in-option:focus-visible { outline: 3px solid rgba(25, 164, 83, .22); outline-offset: 1px; }
+.check-in-option:disabled { cursor: wait; opacity: .65; }
+.check-in-option--not_started.is-selected { color: #4d5a51; background: #eef2ee; border-color: #cbd5cc; box-shadow: inset 0 0 0 1px #cbd5cc; }
+.check-in-option--attempted.is-selected { color: #315e96; background: #edf5ff; border-color: #9fc3e8; box-shadow: inset 0 0 0 1px #9fc3e8; }
+.check-in-option--needs_help.is-selected { color: #9a5a03; background: #fff4dd; border-color: #e9bd72; box-shadow: inset 0 0 0 1px #e9bd72; }
+.check-in-option--solved.is-selected { color: #fff; background: var(--lime); border-color: var(--lime-deep); box-shadow: 0 6px 15px rgba(12, 148, 71, .18); }
+.check-in-help-link { width: fit-content; display: inline-flex; align-items: center; gap: 5px; margin-top: 10px; color: #8a580b; font-size: .75rem; font-weight: 800; }
+.check-in-help-link:hover { color: #684000; text-decoration: underline; }
 .discussion-link { display: inline-flex; align-items: center; gap: 9px; color: #fff; background: linear-gradient(145deg, #11a653, #08783a); border: 1px solid #08783a; border-radius: 12px; margin-top: 17px; padding: 11px 15px; font-size: .9rem; font-weight: 800; width: fit-content; position: relative; z-index: 1; box-shadow: 0 9px 22px rgba(12,148,71,.18); transition: border-color .2s, transform .2s, box-shadow .2s; }
 .discussion-link:hover { color: #fff; border-color: #076c34; transform: translateY(-1px); box-shadow: 0 12px 28px rgba(12,148,71,.26); }
 .problem-card__footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px; position: relative; z-index: 1; }
@@ -271,6 +283,7 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
 .progress-icon { display: grid; place-items: center; width: 42px; height: 42px; background: var(--lime-soft); border-radius: 12px; color: var(--lime-deep); }
 .progress-bar { height: 7px; background: #e8eee8; border-radius: 99px; overflow: hidden; margin: 20px 0 21px; }
 .progress-bar span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #0b8c44, #35b36a); transition: width .35s ease; }
+.check-in-summary-line { margin: -6px 0 17px; color: var(--muted); font-size: .72rem; font-weight: 750; line-height: 1.55; }
 .member-list { display: grid; gap: 3px; margin-bottom: 20px; max-height: 380px; overflow: auto; }
 .member-row { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #edf2ed; }
 .member-row:last-child { border-bottom: 0; }
@@ -284,6 +297,8 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
 .member-remove:disabled { opacity: .5; cursor: wait; }
 .status-pill { font-size: .65rem; font-weight: 800; color: #7d8880; border: 1px solid #dfe7df; background: #f7f9f7; border-radius: 99px; padding: 4px 7px; }
 .status-pill.is-done { color: #12733a; background: var(--lime-soft); border-color: #bee2c8; }
+.status-pill.has-attempt { color: #315e96; background: #edf5ff; border-color: #b9d3ed; }
+.status-pill.needs-help { color: #8a580b; background: #fff4dd; border-color: #ecd09d; }
 .dashboard-skeleton { min-height: 500px; border: 1px solid var(--line); border-radius: 19px; display: grid; place-items: center; color: var(--muted); background: #fff; box-shadow: var(--shadow); }
 
 .heatmap-card { padding: 28px; overflow: hidden; }
@@ -383,6 +398,7 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
   .problem-copy h2 { font-size: 2.45rem; }
   .problem-actions { display: grid; }
   .problem-actions .button { width: 100%; }
+  .check-in-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .discussion-link { width: 100%; justify-content: center; }
   .problem-card__footer { align-items: stretch; }
   .problem-card__footer > span { padding: 0; text-align: center; }

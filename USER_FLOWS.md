@@ -36,25 +36,27 @@ Required fields: title, valid external URL, difficulty, and date. Platform defau
 
 After publishing, the dashboard keeps an **Add another problem** action available. Each problem can be edited or deleted independently.
 
-## 4. Member completes today's problems
+## 4. Member checks in on today's problems
 
-`Dashboard -> Open problem externally -> Return -> Mark done -> See updated progress`
+`Dashboard -> Open problem externally -> Return -> Choose status -> See updated progress`
 
 1. Member opens the external problem link in a new tab.
-2. Member returns after solving it.
-3. Member selects **Mark done**.
-4. App creates the member's completion record once.
-5. That problem's button becomes **Completed** and the daily check-in count/member status update.
-6. Refresh preserves the completed state.
-7. Selecting **Undo** removes only that member's completion after confirmation or a clear second action.
+2. Member returns after attempting it.
+3. Member selects **Attempted**, **Need help**, or **Solved**.
+4. App creates one check-in for that member/problem or updates the existing row.
+5. Selecting **Not started** removes only that member's check-in.
+6. The problem breakdown, overall breakdown, and member status update immediately.
+7. Refresh preserves the latest active status.
+8. **Need help** exposes a direct action to describe the blocker in the existing problem discussion.
 
 ## 5. Member views daily progress
 
 The dashboard shows:
 
 - All of today's problems or a clear "No problem posted" state.
-- `completed problem check-ins / (total active members × today's problem count)`.
-- A completed-problems count for every group member.
+- `updated problem check-ins / (total active members × today's problem count)`.
+- Solved, attempted, need help, and not started counts.
+- A concise honest status for every group member.
 
 Members cannot edit other members' statuses.
 
@@ -64,11 +66,11 @@ Members cannot edit other members' statuses.
 
 - Rows represent current group members.
 - Columns represent the last seven calendar dates, including today.
-- A date where every posted problem is completed is shown as completed.
-- A date where some posted problems are completed is shown as partly completed.
-- A date where no posted problems are completed is shown as incomplete.
+- A date where every posted problem is solved is shown as completed.
+- A date with any solved, attempted, or need help check-in that is not fully solved is shown as partial.
+- A date with no check-in is shown as not started.
 - A date without a posted problem is shown as no problem, not as a failure.
-- Values are calculated from `problems` and `completions`.
+- Values are calculated from `problems` and `problem_check_ins`.
 
 ## 7. Member discusses a problem
 
@@ -85,7 +87,7 @@ Members cannot edit other members' statuses.
 Only the group owner sees admin actions.
 
 - Edit: open the existing values, validate changes, save, and return to the dashboard.
-- Delete: warn that related completions and comments will also be deleted, require confirmation, then show the empty state.
+- Delete: warn that related check-ins and comments will also be deleted, require confirmation, then show the empty state.
 
 ## 9. Sign out
 

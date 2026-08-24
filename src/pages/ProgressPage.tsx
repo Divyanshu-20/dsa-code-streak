@@ -3,10 +3,11 @@ import { useParams } from 'react-router-dom'
 import { AppShell } from '../components/AppShell'
 import { Feedback } from '../components/Feedback'
 import { useCommunityDate } from '../hooks/useCommunityDate'
+import { formatCheckInCounts, memberDayProgress } from '../lib/checkIns'
 import { compactDay, lastSevenDates } from '../lib/date'
 import { loadGroup, loadMembers } from '../lib/data'
 import { errorMessage, requireSupabase } from '../lib/supabase'
-import type { Completion, Group, Member, Problem } from '../types'
+import type { Group, Member, Problem, ProblemCheckIn } from '../types'
 
 export function ProgressPage() {
   const { groupId = '' } = useParams()
@@ -15,7 +16,7 @@ export function ProgressPage() {
   const [group, setGroup] = useState<Group | null>(null)
   const [members, setMembers] = useState<Member[]>([])
   const [problems, setProblems] = useState<Problem[]>([])
-  const [completions, setCompletions] = useState<Completion[]>([])
+  const [checkIns, setCheckIns] = useState<ProblemCheckIn[]>([])
   const [message, setMessage] = useState('')
 
   const load = useCallback(async () => {
@@ -31,9 +32,11 @@ export function ProgressPage() {
       setMembers(nextMembers)
       setProblems(nextProblems)
       if (nextProblems.length) {
-        const result = await requireSupabase().from('completions').select('*').in('problem_id', nextProblems.map((item) => item.id))
+        const result = await requireSupabase().from('problem_check_ins').select('*').in('problem_id', nextProblems.map((item) => item.id))
         if (result.error) throw result.error
-        setCompletions((result.data ?? []) as Completion[])
+        setCheckIns((result.data ?? []) as ProblemCheckIn[])
+      } else {
+        setCheckIns([])
       }
     } catch (error) {
       setMessage(errorMessage(error))
@@ -51,18 +54,13 @@ export function ProgressPage() {
     }
     return grouped
   }, [problems])
-  const completed = useMemo(
-    () => new Set(completions.map((item) => `${item.problem_id}:${item.user_id}`)),
-    [completions],
-  )
-
   return (
     <AppShell backTo={`/group/${groupId}`} backLabel={group?.name ?? 'Dashboard'}>
       <div className="page page--narrow progress-page">
         <div className="page-heading">
           <p className="eyebrow">Last seven days</p>
           <h1>Consistency, made visible.</h1>
-          <p>A day counts as complete after every posted problem is done. Blank cells mean no problem was posted.</p>
+          <p>A day counts as complete after every posted problem is solved. Attempts and help requests remain visible as partial progress.</p>
         </div>
         <Feedback message={message} />
 
@@ -75,10 +73,9 @@ export function ProgressPage() {
                 <div className="heatmap-name" title={member.profile.display_name}>{member.profile.display_name}</div>
                 {dates.map((date) => {
                   const dayProblems = problemsByDate.get(date) ?? []
-                  const completedCount = dayProblems.filter((problem) => completed.has(`${problem.id}:${member.user_id}`)).length
-                  const state = dayProblems.length === 0 ? 'empty' : completedCount === dayProblems.length ? 'done' : completedCount > 0 ? 'partial' : 'missed'
-                  const detail = dayProblems.length === 0 ? 'No problems' : `${completedCount} of ${dayProblems.length} completed`
-                  return <div key={date} className={`heatmap-cell heatmap-cell--${state}`} title={`${member.profile.display_name} | ${date} | ${detail}`} />
+                  const progress = memberDayProgress(dayProblems.map((problem) => problem.id), checkIns, member.user_id)
+                  const detail = progress.state === 'empty' ? 'No problems' : formatCheckInCounts(progress.counts)
+                  return <div key={date} className={`heatmap-cell heatmap-cell--${progress.state}`} title={`${member.profile.display_name} | ${date} | ${detail}`} />
                 })}
               </div>
             ))}
@@ -86,9 +83,9 @@ export function ProgressPage() {
           {members.length === 0 && !message && <p className="empty-copy">No members to show yet.</p>}
           <div className="heatmap-legend">
             <span><i className="heatmap-cell--empty" /> No problem</span>
-            <span><i className="heatmap-cell--missed" /> Not completed</span>
-            <span><i className="heatmap-cell--partial" /> Partly completed</span>
-            <span><i className="heatmap-cell--done" /> Completed</span>
+            <span><i className="heatmap-cell--missed" /> Not started</span>
+            <span><i className="heatmap-cell--partial" /> Attempted or partly solved</span>
+            <span><i className="heatmap-cell--done" /> All solved</span>
           </div>
         </section>
       </div>
