@@ -221,6 +221,13 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
 .dashboard-topline h1 { font-size: clamp(2.35rem, 5vw, 3.9rem); margin: 0; }
 .dashboard-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(310px, .7fr); gap: 20px; align-items: start; }
 .problem-list { display: grid; gap: 16px; min-width: 0; }
+.schedule-summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 15px 18px; border: 1px solid #cfe0d2; border-radius: 14px; background: #f8fbf8; box-shadow: 0 3px 12px rgba(25, 55, 34, .035); }
+.schedule-summary > div { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.schedule-summary strong { font-size: .9rem; color: #334137; }
+.schedule-summary p { margin: 0; color: var(--muted); font-size: .8rem; line-height: 1.45; text-align: right; max-width: 470px; }
+.schedule-badge { display: inline-flex; align-items: center; width: fit-content; border-radius: 99px; padding: 5px 9px; background: var(--lime-soft); color: var(--lime-deep); font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+.schedule-badge--rest { background: #eef3ff; color: #3d5e9c; }
+.schedule-badge--revision, .schedule-badge--mock { background: #fff4dd; color: #8a580b; }
 .problem-card, .progress-card { border: 1px solid var(--line); border-radius: 19px; background: #fff; box-shadow: var(--shadow); }
 .problem-card { min-height: 440px; padding: clamp(25px, 3.7vw, 40px); display: flex; flex-direction: column; position: relative; overflow: hidden; }
 .problem-card::before { content: ''; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, #0b8c44, #39b56d 58%, #d6f2df); }
@@ -229,12 +236,15 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
 .problem-card__header .eyebrow { margin-bottom: 9px; }
 .difficulty { display: inline-flex; border-radius: 99px; padding: 5px 9px; font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
 .difficulty--easy { color: #12733a; background: #e7f7ec; }
+.difficulty--basic { color: #315b3e; background: #eef5ef; }
 .difficulty--medium { color: #9a5a03; background: #fff4dd; }
 .difficulty--hard { color: #a74039; background: #fff0ee; }
 .problem-copy { margin: auto 0; padding: 38px 0; position: relative; z-index: 1; }
 .problem-copy .platform { color: var(--lime-deep); font-size: .81rem; font-weight: 800; }
 .problem-copy h2 { font-size: clamp(2.35rem, 5vw, 3.75rem); line-height: 1.04; letter-spacing: -.05em; margin: 12px 0 15px; max-width: 700px; }
-.problem-copy p { color: #69766d; line-height: 1.65; max-width: 620px; }
+.problem-copy p { color: #69766d; line-height: 1.65; max-width: 700px; }
+.problem-prompt { padding: 14px 16px; border-left: 3px solid #6ac286; border-radius: 0 10px 10px 0; background: #f5faf6; color: #445249 !important; white-space: pre-wrap; }
+.problem-note { font-size: .88rem; }
 .problem-actions { display: flex; flex-wrap: wrap; gap: 10px; position: relative; z-index: 1; }
 .button--complete { background: #f3f7f3; border-color: #dce6dc; color: #435047; }
 .button--complete.is-complete { background: var(--lime); color: #fff; border-color: var(--lime); }
@@ -247,12 +257,17 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
 .empty-problem .eyebrow { justify-content: center; }
 .empty-problem h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin: 12px 0; }
 .empty-problem > p:not(.eyebrow) { color: var(--muted); line-height: 1.6; }
+.schedule-card { min-height: 390px; }
+.schedule-card--rest::before { background: linear-gradient(90deg, #476ba8, #8da8d4 58%, #e2eafb); }
+.schedule-card--revision::before, .schedule-card--mock::before { background: linear-gradient(90deg, #ba7712, #e0a74e 58%, #fff0cc); }
+.schedule-milestone { font-weight: 750; color: #445249 !important; }
 .empty-icon { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 16px; margin: 0 auto 22px; color: var(--lime-deep); background: var(--lime-soft); }
 
 .progress-card { padding: 24px; }
 .progress-card__top { display: flex; justify-content: space-between; align-items: center; }
 .progress-card__top h2 { font-size: 2.35rem; margin: 0; }
 .progress-card__top h2 span { color: #9aa59d; font-size: 1.2rem; }
+.progress-card__top .progress-card__quiet { color: #9aa59d; }
 .progress-icon { display: grid; place-items: center; width: 42px; height: 42px; background: var(--lime-soft); border-radius: 12px; color: var(--lime-deep); }
 .progress-bar { height: 7px; background: #e8eee8; border-radius: 99px; overflow: hidden; margin: 20px 0 21px; }
 .progress-bar span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #0b8c44, #35b36a); transition: width .35s ease; }
@@ -362,6 +377,8 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
   .dashboard-topline h1 { font-size: 2.25rem; }
   .dashboard-topline .button { padding-inline: 12px; }
   .problem-card { min-height: 430px; padding: 23px 19px; }
+  .schedule-summary { align-items: flex-start; flex-direction: column; }
+  .schedule-summary p { text-align: left; }
   .problem-copy { padding: 42px 0; }
   .problem-copy h2 { font-size: 2.45rem; }
   .problem-actions { display: grid; }

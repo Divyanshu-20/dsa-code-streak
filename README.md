@@ -7,6 +7,7 @@ CodeStreak is a mobile-first accountability app for small private DSA groups. An
 - One-tap Google sign-in plus email/password fallback with persistent Supabase sessions
 - Private group creation and invite-code joining
 - Owner-only daily problem creation, including multiple assignments on the same date, editing, and deletion
+- Automatic Day 13-102 roadmap publishing at midnight in Asia/Kolkata, including recovery, revision, and mock days
 - Owner-only member removal with database-enforced authorization
 - Member completion and undo with persisted shared status
 - Daily member progress and a derived seven-day heatmap
@@ -19,8 +20,16 @@ CodeStreak is a mobile-first accountability app for small private DSA groups. An
 
 1. Create a Supabase project.
 2. Apply every SQL file in [`supabase/migrations`](supabase/migrations) in timestamp order.
-3. Enable Email authentication in Supabase Auth.
-4. Enable the Google provider under **Authentication -> Sign In / Providers**, add the Google client ID and secret, and follow Supabase's displayed callback-URL instructions.
+3. Install the roadmap for the target group from the Supabase SQL editor after that group exists:
+
+   ```sql
+   select * from private.install_dsa_roadmap(
+     (select id from public.groups where name = 'DSA - Daily Sprint' limit 1),
+     date '2026-08-24'
+   );
+   ```
+4. Enable Email authentication in Supabase Auth.
+5. Enable the Google provider under **Authentication -> Sign In / Providers**, add the Google client ID and secret, and follow Supabase's displayed callback-URL instructions.
 5. Under **Authentication -> URL Configuration**, add both the local login URL and deployed login URL to the redirect allow list (for example, `http://localhost:5173/login` and `https://your-app.vercel.app/login`).
 6. Copy `.env.example` to `.env.local` and set:
 

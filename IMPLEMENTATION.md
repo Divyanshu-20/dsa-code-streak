@@ -21,6 +21,7 @@ Build the simplest production-usable prototype for 10-50 users. Optimize for a r
 - Do not store derived daily counts, percentages, streaks, or heatmap cells.
 - Do not add real-time subscriptions unless the basic query-and-refresh behavior is already correct and the addition is trivial.
 - Do not add external analytics, queues, background jobs, storage buckets, or edge functions unless a documented requirement cannot work without one.
+- Pre-schedule the fixed Day 13-102 roadmap and gate rows with `publish_at`; do not add a Cron job for deterministic calendar data.
 - Show useful loading, empty, and error states. Avoid silent failures.
 
 ## Suggested routes
@@ -41,7 +42,7 @@ Protected pages redirect unauthenticated users to sign in. Non-members must rece
 1. Connect Supabase and authentication.
 2. Create schema, constraints, indexes, and Row Level Security policies.
 3. Create/join group and membership checks.
-4. Admin creates one or more problems for today.
+4. Install the canonical roadmap for the target group while preserving owner-added problems.
 5. Member marks/unmarks completion.
 6. Render daily count and member statuses from database records.
 7. Render the seven-day heatmap from problems and completions.
@@ -51,9 +52,10 @@ Protected pages redirect unauthenticated users to sign in. Non-members must rece
 
 ## UI behavior
 
-- Default to the current local date for today's problems while storing dates as a PostgreSQL `date`.
-- Difficulty values: `Easy`, `Medium`, or `Hard`.
-- External problem links open safely in a new tab.
+- Use `Asia/Kolkata` for today's date and midnight rollover while storing assignment dates as PostgreSQL `date` values.
+- Difficulty values: `Basic`, `Easy`, `Medium`, or `Hard`.
+- External problem links open safely in a new tab; URL-free drills render a self-contained in-app prompt.
+- Rest, revision, and zero-problem mock days render their schedule instructions rather than a generic empty state.
 - The completion button must clearly distinguish incomplete, saving, completed, and error states.
 - Disable duplicate form submission while a request is pending.
 - Confirm before deleting a problem because its completions and comments will also be removed.

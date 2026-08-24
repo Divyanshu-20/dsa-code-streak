@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppShell } from '../components/AppShell'
 import { Feedback } from '../components/Feedback'
+import { useCommunityDate } from '../hooks/useCommunityDate'
 import { compactDay, lastSevenDates } from '../lib/date'
 import { loadGroup, loadMembers } from '../lib/data'
 import { errorMessage, requireSupabase } from '../lib/supabase'
@@ -9,7 +10,8 @@ import type { Completion, Group, Member, Problem } from '../types'
 
 export function ProgressPage() {
   const { groupId = '' } = useParams()
-  const dates = useMemo(() => lastSevenDates(), [])
+  const today = useCommunityDate()
+  const dates = useMemo(() => lastSevenDates(today), [today])
   const [group, setGroup] = useState<Group | null>(null)
   const [members, setMembers] = useState<Member[]>([])
   const [problems, setProblems] = useState<Problem[]>([])

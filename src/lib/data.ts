@@ -1,4 +1,4 @@
-import type { Group, Member, Problem, Profile } from '../types'
+import type { Group, Member, Problem, Profile, ScheduleDay } from '../types'
 import { requireSupabase } from './supabase'
 
 function profileFromRelation(value: unknown): Profile {
@@ -36,14 +36,45 @@ export async function loadMembers(groupId: string) {
   })) as Member[]
 }
 
-export async function loadProblems(groupId: string, date: string) {
-  const { data, error } = await requireSupabase()
-    .from('problems')
-    .select('*')
-    .eq('group_id', groupId)
-    .eq('problem_date', date)
-    .order('created_at', { ascending: true })
+function scheduleDayFromRow(row: Record<string, unknown>): ScheduleDay {
+  return {
+    id: row.id as string,
+    groupId: row.group_id as string,
+    dayNumber: row.day_number as number,
+    date: row.schedule_date as string,
+    weekNumber: row.week_number as number,
+    cadence: row.cadence as string,
+    kind: row.kind as ScheduleDay['kind'],
+    topic: row.topic as string,
+    difficultySummary: row.difficulty_summary as string,
+    milestone: row.milestone as string,
+    instructions: row.instructions as string,
+    publishAt: row.publish_at as string,
+  }
+}
 
-  if (error) throw error
-  return (data ?? []) as Problem[]
+export async function loadDailySchedule(groupId: string, date: string) {
+  const [dayResult, problemResult] = await Promise.all([
+    requireSupabase()
+      .from('schedule_days')
+      .select('*')
+      .eq('group_id', groupId)
+      .eq('schedule_date', date)
+      .maybeSingle(),
+    requireSupabase()
+      .from('problems')
+      .select('*')
+      .eq('group_id', groupId)
+      .eq('problem_date', date)
+      .order('display_order', { ascending: true })
+      .order('created_at', { ascending: true }),
+  ])
+
+  if (dayResult.error) throw dayResult.error
+  if (problemResult.error) throw problemResult.error
+
+  return {
+    day: dayResult.data ? scheduleDayFromRow(dayResult.data as Record<string, unknown>) : null,
+    problems: (problemResult.data ?? []) as Problem[],
+  }
 }

@@ -4,10 +4,11 @@ import { Link, useParams } from 'react-router-dom'
 import { AppShell } from '../components/AppShell'
 import { Feedback } from '../components/Feedback'
 import { useAuth } from '../context/AuthContext'
-import { loadGroup, loadMembers, loadProblems } from '../lib/data'
-import { localDateKey } from '../lib/date'
+import { useCommunityDate } from '../hooks/useCommunityDate'
+import { loadDailySchedule, loadGroup, loadMembers } from '../lib/data'
+import { formatCommunityDate } from '../lib/date'
 import { errorMessage, requireSupabase } from '../lib/supabase'
-import type { Completion, Group, Member, Problem } from '../types'
+import type { Completion, Group, Member, Problem, ScheduleDay } from '../types'
 
 function initials(name: string) {
   return name.split(/\s+/).slice(0, 2).map((part) => part[0]).join('').toUpperCase()
@@ -16,8 +17,10 @@ function initials(name: string) {
 export function GroupDashboardPage() {
   const { groupId = '' } = useParams()
   const { user } = useAuth()
+  const today = useCommunityDate()
   const [group, setGroup] = useState<Group | null>(null)
   const [members, setMembers] = useState<Member[]>([])
+  const [scheduleDay, setScheduleDay] = useState<ScheduleDay | null>(null)
   const [problems, setProblems] = useState<Problem[]>([])
   const [completions, setCompletions] = useState<Completion[]>([])
   const [loading, setLoading] = useState(true)
@@ -30,13 +33,15 @@ export function GroupDashboardPage() {
     setLoading(true)
     setMessage('')
     try {
-      const [nextGroup, nextMembers, nextProblems] = await Promise.all([
+      const [nextGroup, nextMembers, dailySchedule] = await Promise.all([
         loadGroup(groupId),
         loadMembers(groupId),
-        loadProblems(groupId, localDateKey()),
+        loadDailySchedule(groupId, today),
       ])
+      const nextProblems = dailySchedule.problems
       setGroup(nextGroup)
       setMembers(nextMembers)
+      setScheduleDay(dailySchedule.day)
       setProblems(nextProblems)
       if (nextProblems.length) {
         const { data, error } = await requireSupabase()
@@ -55,7 +60,7 @@ export function GroupDashboardPage() {
     } finally {
       setLoading(false)
     }
-  }, [groupId])
+  }, [groupId, today])
 
   useEffect(() => { void load() }, [load])
 
@@ -151,7 +156,7 @@ export function GroupDashboardPage() {
           <>
             <div className="dashboard-topline">
               <div>
-                <p className="eyebrow">{new Intl.DateTimeFormat(undefined, { weekday: 'long', month: 'long', day: 'numeric' }).format(new Date())}</p>
+                <p className="eyebrow">{formatCommunityDate(today)} - India time</p>
                 <h1>{group.name}</h1>
               </div>
               <button className="button button--ghost" type="button" onClick={copyInvite}>
@@ -163,6 +168,17 @@ export function GroupDashboardPage() {
 
             <div className="dashboard-grid">
               <div className="problem-list">
+                {scheduleDay && (
+                  <section className="schedule-summary" aria-label={`Roadmap Day ${scheduleDay.dayNumber}`}>
+                    <div>
+                      <span className={`schedule-badge schedule-badge--${scheduleDay.kind}`}>
+                        Day {scheduleDay.dayNumber} - Week {scheduleDay.weekNumber}
+                      </span>
+                      <strong>{scheduleDay.topic}</strong>
+                    </div>
+                    <p>{scheduleDay.milestone}</p>
+                  </section>
+                )}
                 {problems.length ? (
                   <>
                     {problems.map((problem, index) => {
@@ -185,12 +201,15 @@ export function GroupDashboardPage() {
                           <div className="problem-copy">
                             <span className="platform">{problem.platform}</span>
                             <h2>{problem.title}</h2>
-                            {problem.note && <p>{problem.note}</p>}
+                            {problem.prompt && <p className="problem-prompt">{problem.prompt}</p>}
+                            {problem.note && <p className="problem-note">{problem.note}</p>}
                           </div>
                           <div className="problem-actions">
-                            <a className="button button--secondary" href={problem.url} target="_blank" rel="noopener noreferrer">
-                              Open problem <ArrowUpRight size={17} />
-                            </a>
+                            {problem.url && (
+                              <a className="button button--secondary" href={problem.url} target="_blank" rel="noopener noreferrer">
+                                Open problem <ArrowUpRight size={17} />
+                              </a>
+                            )}
                             <button className={`button button--complete ${myCompletion ? 'is-complete' : ''}`} type="button" disabled={saving} onClick={() => void toggleCompletion(problem)}>
                               <CheckCircle2 size={19} />
                               {saving ? 'Saving...' : myCompletion ? 'Completed - Undo' : 'Mark done'}
@@ -211,6 +230,17 @@ export function GroupDashboardPage() {
                       </Link>
                     )}
                   </>
+                ) : scheduleDay ? (
+                  <section className={`problem-card schedule-card schedule-card--${scheduleDay.kind}`}>
+                    <div className="empty-problem">
+                      <span className="empty-icon"><CalendarDays size={26} /></span>
+                      <p className="eyebrow">Day {scheduleDay.dayNumber} - {scheduleDay.cadence}</p>
+                      <h2>{scheduleDay.kind === 'rest' ? 'Recovery day.' : scheduleDay.kind === 'revision' ? 'Revision checkpoint.' : 'Mock checkpoint.'}</h2>
+                      <p>{scheduleDay.instructions}</p>
+                      <p className="schedule-milestone">{scheduleDay.milestone}</p>
+                      {isOwner && <Link className="button button--primary" to={`/group/${groupId}/admin/problem`}><Plus size={18} /> Add an optional problem</Link>}
+                    </div>
+                  </section>
                 ) : (
                   <section className="problem-card">
                     <div className="empty-problem">
@@ -226,7 +256,10 @@ export function GroupDashboardPage() {
 
               <aside className="progress-card">
                 <div className="progress-card__top">
-                  <div><p className="eyebrow">Today's check-ins</p><h2>{completions.length}<span> / {totalCheckIns}</span></h2></div>
+                  <div>
+                    <p className="eyebrow">Today's check-ins</p>
+                    {problems.length ? <h2>{completions.length}<span> / {totalCheckIns}</span></h2> : <h2 className="progress-card__quiet">-</h2>}
+                  </div>
                   <span className="progress-icon"><Users size={20} /></span>
                 </div>
                 <div className="progress-bar" aria-label={`${completions.length} of ${totalCheckIns} problem check-ins completed`}>
@@ -241,7 +274,9 @@ export function GroupDashboardPage() {
                         <span className="member-avatar">{initials(member.profile.display_name)}</span>
                         <span className="member-name">{member.profile.display_name}{member.user_id === user?.id && <small>You</small>}</span>
                         <span className="member-actions">
-                          <span className={`status-pill ${done ? 'is-done' : ''}`}>{done ? 'All done' : problems.length ? `${completedCount}/${problems.length} done` : '-'}</span>
+                          <span className={`status-pill ${done ? 'is-done' : ''}`}>
+                            {done ? 'All done' : problems.length ? `${completedCount}/${problems.length} done` : scheduleDay ? 'No check-in' : '-'}
+                          </span>
                           {isOwner && member.user_id !== user?.id && (
                             <button
                               className="member-remove"

@@ -1,4 +1,21 @@
-export type Difficulty = 'Easy' | 'Medium' | 'Hard'
+export type Difficulty = 'Basic' | 'Easy' | 'Medium' | 'Hard'
+
+export type ScheduleDayKind = 'problem' | 'rest' | 'revision' | 'mock'
+
+export interface ScheduleDay {
+  id: string
+  groupId: string
+  dayNumber: number
+  date: string
+  weekNumber: number
+  cadence: string
+  kind: ScheduleDayKind
+  topic: string
+  difficultySummary: string
+  milestone: string
+  instructions: string
+  publishAt: string
+}
 
 export interface Profile {
   id: string
@@ -25,11 +42,16 @@ export interface Problem {
   id: string
   group_id: string
   title: string
-  url: string
+  url: string | null
   platform: string
   difficulty: Difficulty
   problem_date: string
   note: string | null
+  prompt: string | null
+  source: 'manual' | 'roadmap'
+  schedule_day_id: string | null
+  display_order: number
+  publish_at: string
   created_by: string
   created_at: string
   updated_at: string

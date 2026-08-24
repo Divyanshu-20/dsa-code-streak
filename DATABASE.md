@@ -35,15 +35,26 @@ The owner must also have a membership row.
 - `id uuid primary key default gen_random_uuid()`
 - `group_id uuid not null references groups(id) on delete cascade`
 - `title text not null`
-- `url text not null`
+- `url text null` (required only when `prompt` is null)
 - `platform text not null default 'LeetCode'`
-- `difficulty text not null check (difficulty in ('Easy', 'Medium', 'Hard'))`
+- `difficulty text not null check (difficulty in ('Basic', 'Easy', 'Medium', 'Hard'))`
 - `problem_date date not null`
 - `note text null`
+- `prompt text null`
+- `schedule_day_id uuid null references schedule_days(id) on delete cascade`
+- `source text not null check (source in ('manual', 'roadmap'))`
+- `display_order smallint not null`
+- `publish_at timestamptz not null`
 - `created_by uuid not null references profiles(id)`
 - `created_at timestamptz not null default now()`
 - `updated_at timestamptz not null default now()`
 - Multiple problems may share the same `(group_id, problem_date)`.
+
+### `schedule_days`
+
+- One row per roadmap day and group, uniquely identified by both `(group_id, day_number)` and `(group_id, schedule_date)`.
+- Stores week/day metadata, day kind, topic, milestone, instructions, and `publish_at`.
+- Roadmap problems reference the schedule day; rest, revision, and zero-problem mock days still have schedule metadata.
 
 ### `completions`
 
@@ -95,14 +106,14 @@ Policies may use small `security definer` membership helper functions if needed 
 
 ### Problems
 
-- Group members may read problems in their group.
+- Group owners may preview their group's schedule. Other members may read a problem only after `publish_at <= now()`.
 - Only the group owner may insert, update, or delete problems for that group.
 - `created_by` must equal the authenticated user on insert.
 
 ### Completions
 
-- Group members may read completions for problems in their group.
-- A user may insert or delete only their own completion and only for a problem in a group they belong to.
+- Group members may read completions only for published problems in their group.
+- A user may insert or delete only their own completion and only for a published problem in a group they belong to.
 - No user may update a completion to another user/problem.
 
 ### Comments
@@ -123,7 +134,8 @@ Policies may use small `security definer` membership helper functions if needed 
 
 ## Data handling
 
-- Store timestamps in UTC and format them in the browser.
+- Store timestamps in UTC and format them in the `Asia/Kolkata` community timezone.
 - Store daily assignment as `date`, not a timestamp.
+- Store midnight publication as `timestamptz`; midnight India time is 18:30 UTC on the preceding date.
 - Generate invite codes with sufficient randomness; do not use sequential IDs.
 - Never expose or use the Supabase service-role key in frontend code.

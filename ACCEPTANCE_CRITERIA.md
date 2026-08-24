@@ -33,6 +33,16 @@ The prototype is ready to share only when all required items below pass on the d
 - [ ] The owner can delete after confirmation; related completions/comments are removed.
 - [ ] If no problem exists today, the dashboard shows a useful empty state.
 
+## Automated roadmap
+
+- [ ] The canonical roadmap contains Day 13-102, exactly 90 schedule days, and 126 official problems.
+- [ ] Day 13 contains the official Sum 1..N drill alongside any existing manual problem.
+- [ ] Regular members cannot read or complete a future roadmap problem through direct API calls.
+- [ ] The dashboard changes dates at midnight in Asia/Kolkata and rechecks after a background tab becomes active.
+- [ ] URL-free drills show a complete in-app prompt; linked problems continue to open safely in a new tab.
+- [ ] Rest, revision, and zero-problem mock days show their roadmap instructions instead of the generic empty state.
+- [ ] Running the roadmap installer again updates official content without duplicating schedule days or problems.
+
 ## Completion
 
 Given a signed-in group member and one or more posted problems:

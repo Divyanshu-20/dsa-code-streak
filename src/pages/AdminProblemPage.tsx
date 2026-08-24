@@ -4,7 +4,7 @@ import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { AppShell } from '../components/AppShell'
 import { Feedback } from '../components/Feedback'
 import { useAuth } from '../context/AuthContext'
-import { localDateKey } from '../lib/date'
+import { communityDateKey } from '../lib/date'
 import { errorMessage, requireSupabase } from '../lib/supabase'
 import type { Difficulty, Problem } from '../types'
 
@@ -16,9 +16,10 @@ export function AdminProblemPage() {
   const problemId = searchParams.get('problemId')
   const [title, setTitle] = useState('')
   const [url, setUrl] = useState('')
+  const [prompt, setPrompt] = useState('')
   const [platform, setPlatform] = useState('LeetCode')
   const [difficulty, setDifficulty] = useState<Difficulty>('Medium')
-  const [date, setDate] = useState(localDateKey())
+  const [date, setDate] = useState(communityDateKey())
   const [note, setNote] = useState('')
   const [busy, setBusy] = useState(false)
   const [message, setMessage] = useState('')
@@ -30,7 +31,8 @@ export function AdminProblemPage() {
       else if (data) {
         const problem = data as Problem
         setTitle(problem.title)
-        setUrl(problem.url)
+        setUrl(problem.url ?? '')
+        setPrompt(problem.prompt ?? '')
         setPlatform(problem.platform)
         setDifficulty(problem.difficulty)
         setDate(problem.problem_date)
@@ -42,10 +44,24 @@ export function AdminProblemPage() {
   async function save(event: React.FormEvent) {
     event.preventDefault()
     if (!user) return
+    if (!url.trim() && !prompt.trim()) {
+      setMessage('Add either an external problem URL or a self-contained in-app prompt.')
+      return
+    }
     setBusy(true)
     setMessage('')
     try {
-      const values = { group_id: groupId, title: title.trim(), url: url.trim(), platform: platform.trim(), difficulty, problem_date: date, note: note.trim() || null, created_by: user.id }
+      const values = {
+        group_id: groupId,
+        title: title.trim(),
+        url: url.trim() || null,
+        prompt: prompt.trim() || null,
+        platform: platform.trim(),
+        difficulty,
+        problem_date: date,
+        note: note.trim() || null,
+        created_by: user.id,
+      }
       const query = problemId
         ? requireSupabase().from('problems').update(values).eq('id', problemId)
         : requireSupabase().from('problems').insert(values)
@@ -84,9 +100,10 @@ export function AdminProblemPage() {
         <form className="card problem-form" onSubmit={save}>
           <div className="form-grid">
             <label className="span-2">Problem title<input value={title} onChange={(event) => setTitle(event.target.value)} required maxLength={160} placeholder="Two Sum" /></label>
-            <label className="span-2">Problem URL<input type="url" value={url} onChange={(event) => setUrl(event.target.value)} required placeholder="https://leetcode.com/problems/two-sum/" /></label>
+            <label className="span-2">Problem URL (optional)<input type="url" value={url} onChange={(event) => setUrl(event.target.value)} placeholder="https://leetcode.com/problems/two-sum/" /></label>
+            <label className="span-2">In-app prompt (required when there is no URL)<textarea value={prompt} onChange={(event) => setPrompt(event.target.value)} rows={5} maxLength={4000} placeholder="Write the complete exercise so members can solve it without leaving CodeStreak." /></label>
             <label>Platform<input value={platform} onChange={(event) => setPlatform(event.target.value)} required maxLength={60} /></label>
-            <label>Difficulty<select value={difficulty} onChange={(event) => setDifficulty(event.target.value as Difficulty)}><option>Easy</option><option>Medium</option><option>Hard</option></select></label>
+            <label>Difficulty<select value={difficulty} onChange={(event) => setDifficulty(event.target.value as Difficulty)}><option>Basic</option><option>Easy</option><option>Medium</option><option>Hard</option></select></label>
             <label>Date<input type="date" value={date} onChange={(event) => setDate(event.target.value)} required /></label>
             <label className="span-2">Optional note<textarea value={note} onChange={(event) => setNote(event.target.value)} rows={4} maxLength={500} placeholder="Focus on the hash map approach after trying brute force." /></label>
           </div>
